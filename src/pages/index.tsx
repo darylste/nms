@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 
-import Button from '../Atomic/Atoms/Button/Button';
-import Nav from '../Atomic/Molecules/Nav/Nav';
+import Header from '../Atomic/Organisms/Header/Header';
 
 export default function Home() {
   const items = [
@@ -25,13 +24,7 @@ export default function Home() {
           href='/favicon.ico'
         />
       </Head>
-      <Nav items={items} />
-      <Button
-        href='www.google.com'
-        varient='cta'
-      >
-        View Our Events
-      </Button>
+      <Header navItems={items} />
     </div>
   );
 }

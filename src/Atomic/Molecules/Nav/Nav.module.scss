@@ -2,10 +2,26 @@
 
 .nav {
   display: flex;
-  margin-right: $spacing-xl;
+  align-items: center;
 }
 
 .li {
   font-weight: $font-weight-semi-bold;
-  margin-right: $spacing-rg;
+  color: $color-white;
+
+  &:not(:last-of-type) {
+    margin-right: $spacing-rg;
+  }
+
+  &:last-of-type {
+    margin-right: $spacing-xl;
+  }
+
+  &:hover {
+    filter: opacity(0.8);
+  }
+
+  &:active {
+    filter: opacity(0.5);
+  }
 }

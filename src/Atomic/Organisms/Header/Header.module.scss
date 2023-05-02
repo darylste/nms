@@ -1,0 +1,8 @@
+@import '../../../styles/variables.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $color-primary-shade;
+  padding: $spacing-xs $spacing-xl;
+}

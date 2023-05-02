@@ -1,0 +1,21 @@
+@import '../../../styles/variables.scss';
+
+.cta {
+  display: inline-flex;
+  font-size: $font-size-2xs;
+  font-weight: $font-weight-semi-bold;
+  text-align: center;
+  padding: $spacing-xs $spacing-rg;
+  color: $color-white;
+  background-color: $color-accent;
+  border-radius: 100px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-accent-tint;
+  }
+
+  &:active {
+    background-color: $color-accent;
+  }
+}

@@ -1,0 +1,11 @@
+@import '../../../styles/variables.scss';
+
+.nav {
+  display: flex;
+  margin-right: $spacing-xl;
+}
+
+.li {
+  font-weight: $font-weight-semi-bold;
+  margin-right: $spacing-rg;
+}

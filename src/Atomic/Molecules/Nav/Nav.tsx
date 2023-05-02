@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 
 import styles from './Nav.module.scss';
+import Button from '../../Atoms/Button/Button';
 
 interface INavItemProps {
   page: string;
@@ -13,16 +14,24 @@ interface INavProps {
 
 const Nav: FC<INavProps> = ({ items }) => {
   return (
-    <ul className={styles.nav}>
-      {items.map(({ page, href }, i) => (
-        <li
-          key={i}
-          className={styles.li}
-        >
-          <a href={href}>{page}</a>
-        </li>
-      ))}
-    </ul>
+    <div className={styles.nav}>
+      <ul className={styles.nav}>
+        {items.map(({ page, href }, i) => (
+          <li
+            key={i}
+            className={styles.li}
+          >
+            <a href={href}>{page}</a>
+          </li>
+        ))}
+      </ul>
+      <Button
+        href='www.google.com'
+        varient='cta'
+      >
+        View Our Events
+      </Button>
+    </div>
   );
 };
 

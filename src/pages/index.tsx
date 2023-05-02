@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 
+import Button from '../Atomic/Atoms/Button/Button';
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -15,7 +17,12 @@ export default function Home() {
           href='/favicon.ico'
         />
       </Head>
-      Home Page
+      <Button
+        href='www.google.com'
+        varient='cta'
+      >
+        View Our Events
+      </Button>
     </div>
   );
 }

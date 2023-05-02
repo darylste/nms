@@ -2,8 +2,16 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 
 import Button from '../Atomic/Atoms/Button/Button';
+import Nav from '../Atomic/Molecules/Nav/Nav';
 
 export default function Home() {
+  const items = [
+    { page: 'Home', href: 'www.google.com' },
+    { page: 'Museums', href: 'www.google.com' },
+    { page: 'Collections', href: 'www.google.com' },
+    { page: 'Login', href: 'www.google.com' },
+  ];
+
   return (
     <div className={styles.container}>
       <Head>
@@ -17,6 +25,7 @@ export default function Home() {
           href='/favicon.ico'
         />
       </Head>
+      <Nav items={items} />
       <Button
         href='www.google.com'
         varient='cta'

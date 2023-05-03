@@ -1,0 +1,12 @@
+@import '../../../styles/variables.scss';
+
+.ourWork {
+  padding: $spacing-2xl $spacing-xl;
+  text-align: center;
+}
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-sm;
+}

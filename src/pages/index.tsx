@@ -3,6 +3,11 @@ import styles from '../styles/Home.module.scss';
 
 import Header from '../Atomic/Organisms/Header/Header';
 import Hero from '../Atomic/Organisms/Hero/Hero';
+import OurWork from '../Atomic/Organisms/OurWork/OurWork';
+
+import collectionsIcon from '../../public/assets/icons/collections.svg';
+import eventsIcon from '../../public/assets/icons/events.svg';
+import historyIcon from '../../public/assets/icons/history.svg';
 
 export default function Home() {
   const items = [
@@ -11,6 +16,31 @@ export default function Home() {
     { page: 'Collections', href: 'www.google.com' },
     { page: 'Login', href: 'www.google.com' },
   ];
+
+  const ourWorkData = {
+    title: ' What We Offer at National Museums Scotland',
+    blocks: [
+      {
+        icon: collectionsIcon,
+        iconName: 'book icon',
+        title: 'Curating Collections',
+        text: "At National Museums Scotland, we take pride in curating a diverse and extensive collection of artefacts that showcase Scotland's rich cultural and historical heritage. Our team of experts works tirelessly to acquire, preserve, and interpret these collections, ensuring that they remain accessible for generations to come.",
+      },
+      {
+        icon: eventsIcon,
+        iconName: 'calender icon',
+        title: 'Curating Collections',
+        text: "At National Museums Scotland, we take pride in curating a diverse and extensive collection of artefacts that showcase Scotland's rich cultural and historical heritage. Our team of experts works tirelessly to acquire, preserve, and interpret these collections, ensuring that they remain accessible for generations to come.",
+      },
+      {
+        icon: historyIcon,
+        iconName: 'scroll icon',
+
+        title: 'Curating Collections',
+        text: "At National Museums Scotland, we take pride in curating a diverse and extensive collection of artefacts that showcase Scotland's rich cultural and historical heritage. Our team of experts works tirelessly to acquire, preserve, and interpret these collections, ensuring that they remain accessible for generations to come.",
+      },
+    ],
+  };
 
   return (
     <div className={styles.container}>
@@ -27,6 +57,7 @@ export default function Home() {
       </Head>
       <Header navItems={items} />
       <Hero />
+      <OurWork {...ourWorkData} />
     </div>
   );
 }

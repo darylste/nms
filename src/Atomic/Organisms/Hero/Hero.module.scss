@@ -3,5 +3,5 @@
 .hero {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin: $spacing-2xl $spacing-xl;
+  padding: $spacing-2xl $spacing-xl;
 }

@@ -1,9 +1,26 @@
 @import '../../../styles/variables.scss';
 
-.h1 {
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   font-family: $font-heading;
+}
+
+.h1 {
   font-size: $font-size-3xl;
   font-weight: $font-weight-md;
+}
+
+.h2 {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-md;
+}
+
+.h3 {
+  font-size: $font-size-xl;
 }
 
 .hero {

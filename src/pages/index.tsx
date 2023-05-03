@@ -8,6 +8,7 @@ import OurWork from '../Atomic/Organisms/OurWork/OurWork';
 import collectionsIcon from '../../public/assets/icons/collections.svg';
 import eventsIcon from '../../public/assets/icons/events.svg';
 import historyIcon from '../../public/assets/icons/history.svg';
+import FeaturedEvents from '../Atomic/Organisms/FeaturedEvents/FeaturedEvents';
 
 export default function Home() {
   const items = [
@@ -42,6 +43,46 @@ export default function Home() {
     ],
   };
 
+  const featuredEventsData = {
+    title: 'Featured Events',
+    text: [
+      'At National Museums Scotland, we&apos;re dedicated to bringing history to life through engaging events and activities for all ages. Check out what&apos;s coming up below and book your tickets today!',
+      'From world-class exhibitions to interactive workshops and talks, we offer a wide range of events that are designed to inspire and educate. Whether you&apos;re a history buff, a science lover, or simply looking for a fun day out with the family, we&apos;ve got something for everyone.',
+      'Our events are carefully curated by our team of experts, who are passionate about sharing Scotland&apos;s rich cultural heritage with the world. From ancient civilisations to contemporary art, our events showcase the best of Scotland&apos;s past and present.',
+      'Be sure to check back often for the latest updates and to book your tickets in advance to avoid disappointment. We can&apos;t wait to welcome you to one of our upcoming events!',
+    ],
+    events: [
+      {
+        title: 'Event Name',
+        imgUrl:
+          'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+        imgAlt: 'placeholder',
+        eventUrl: '/eventOne',
+      },
+      {
+        title: 'Event Name',
+        imgUrl:
+          'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+        imgAlt: 'placeholder',
+        eventUrl: '/eventTwo',
+      },
+      {
+        title: 'Event Name',
+        imgUrl:
+          'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+        imgAlt: 'placeholder',
+        eventUrl: '/eventThree',
+      },
+      {
+        title: 'Event Name',
+        imgUrl:
+          'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+        imgAlt: 'placeholder',
+        eventUrl: '/eventFour',
+      },
+    ],
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -58,6 +99,7 @@ export default function Home() {
       <Header navItems={items} />
       <Hero />
       <OurWork {...ourWorkData} />
+      <FeaturedEvents {...featuredEventsData} />
     </div>
   );
 }

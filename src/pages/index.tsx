@@ -9,6 +9,7 @@ import collectionsIcon from '../../public/assets/icons/collections.svg';
 import eventsIcon from '../../public/assets/icons/events.svg';
 import historyIcon from '../../public/assets/icons/history.svg';
 import FeaturedEvents from '../Atomic/Organisms/FeaturedEvents/FeaturedEvents';
+import NewsletterSignup from '../Atomic/Molecules/NewsletterSignup/NewsletterSignup';
 
 export default function Home() {
   const items = [
@@ -100,6 +101,7 @@ export default function Home() {
       <Hero />
       <OurWork {...ourWorkData} />
       <FeaturedEvents {...featuredEventsData} />
+      <NewsletterSignup />
     </div>
   );
 }

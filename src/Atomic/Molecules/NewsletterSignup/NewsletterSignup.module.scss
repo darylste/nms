@@ -1,0 +1,10 @@
+@import '../../../styles/variables.scss';
+
+.newsletterSignup {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: $spacing-xl;
+  padding: $spacing-2xl $spacing-xl;
+  justify-content: center;
+  align-items: center;
+}

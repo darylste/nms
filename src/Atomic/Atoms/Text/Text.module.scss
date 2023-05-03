@@ -1,0 +1,11 @@
+@import '../../../styles/variables.scss';
+
+.h1 {
+  font-family: $font-heading;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-md;
+}
+
+.hero {
+  font-size: $font-size-sm;
+}

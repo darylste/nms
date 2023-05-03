@@ -1,0 +1,7 @@
+@import '../../../styles/variables.scss';
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: $spacing-2xl $spacing-xl;
+}

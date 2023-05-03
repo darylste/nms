@@ -1,21 +1,16 @@
-# Create Our Work Component
+# Pull Request Title
 
 ## Files Changed
 
-- **Text.module.scss**
-  Updated styles for all heading tags to use the heading font variable. Styles updated for h2 and h3 tags to match designs.
-- **Hero.module.scss**
-  Margin changed to padding, this fixes issue with margins combining and gives the correct spacing as shown in designs.
-- **globals.scss**
-  Body font size updates to correct earlier mistake.
+- **File Path**
+  Include a short description of the changes made and why.
 
 ## Components Created
 
-- **WorkBlock**
-  Created WorkBlock component which takes title, text, icon, and icon alt to make info block shown in 'Our Work' section of designs.
-- **OurWork**
-  Created our work section component. Used newly created WorkBlock component along with Text component.
+- **Name/Path of Component**
+  Include a description of the new component and what it does / where it is used.
 
 ## Packages Installed
 
-No packages installed.
+- **Package Name**
+  Include a description of the purpose of the package and where it has been used.

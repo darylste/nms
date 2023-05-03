@@ -1,17 +1,21 @@
 import React, { FC, ReactNode } from 'react';
+import cn from 'classnames';
 import styles from './Button.module.scss';
 
 interface IButtonProps {
   varient: 'cta';
   href: string;
   children: ReactNode;
+  fullWidth?: boolean;
 }
 
-const Button: FC<IButtonProps> = ({ varient, href, children }) => {
+const Button: FC<IButtonProps> = ({ varient, href, children, fullWidth }) => {
   if (varient === 'cta') {
     return (
       <a
-        className={styles.cta}
+        // if fullWidth, styles.fullWidth
+        className={cn(fullWidth ? styles.fullWidth : null, styles.cta)}
+        // className={styles.cta}
         href={href}
       >
         {children}

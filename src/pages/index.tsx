@@ -2,6 +2,7 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 
 import Header from '../Atomic/Organisms/Header/Header';
+import Hero from '../Atomic/Organisms/Hero/Hero';
 
 export default function Home() {
   const items = [
@@ -25,6 +26,7 @@ export default function Home() {
         />
       </Head>
       <Header navItems={items} />
+      <Hero />
     </div>
   );
 }

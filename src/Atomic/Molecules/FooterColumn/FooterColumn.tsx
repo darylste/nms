@@ -1,18 +1,9 @@
 import React, { FC, Fragment } from 'react';
 import Text from '../../Atoms/Text/Text';
-
-import styles from './FooterColumn.module.scss';
 import Spacer from '../../Atoms/Spacer/Spacer';
 
-interface IFooterItemProps {
-  name: string;
-  url: string;
-}
-
-interface IFooterColumnProps {
-  title: string;
-  items: IFooterItemProps[];
-}
+import { IFooterColumnProps } from '../../../../utils/types';
+import styles from './FooterColumn.module.scss';
 
 const FooterColumn: FC<IFooterColumnProps> = ({ title, items }) => {
   return (

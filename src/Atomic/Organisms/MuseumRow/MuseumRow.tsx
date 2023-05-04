@@ -3,16 +3,8 @@ import Text from '../../Atoms/Text/Text';
 import Spacer from '../../Atoms/Spacer/Spacer';
 import Image from 'next/image';
 
+import { IMuseumRowProps } from '../../../../utils/types';
 import styles from './MuseumRow.module.scss';
-
-interface IMuseumRowProps {
-  orientation: 'left' | 'right';
-  location: string;
-  title: string;
-  text: string[];
-  imgUrl: string;
-  imgAlt: string;
-}
 
 const MuseumRow: FC<IMuseumRowProps> = ({
   orientation,

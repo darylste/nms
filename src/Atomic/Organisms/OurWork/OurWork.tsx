@@ -1,17 +1,10 @@
 import React, { FC } from 'react';
-import styles from './OurWork.module.scss';
-
-import Text from '../../Atoms/Text/Text';
 import WorkBlock from '../../Molecules/WorkBlock/WorkBlock';
 import Spacer from '../../Atoms/Spacer/Spacer';
+import Text from '../../Atoms/Text/Text';
 
-interface IWorkBlockProps {
-  icon: string;
-  iconName: string;
-  title: string;
-  text: string;
-}
-
+import { IWorkBlockProps } from '../../../../utils/types';
+import styles from './OurWork.module.scss';
 interface IOurWorkProps {
   title: string;
   blocks: IWorkBlockProps[];

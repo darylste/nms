@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
-import Nav from '../../Molecules/Nav/Nav';
+import { Nav } from '@atomic';
+import { INavItemProps } from '@types';
 
-import { INavItemProps } from '../../../../utils/types';
 import logo from '../../../../public/assets/images/logo.svg';
 import styles from './Header.module.scss';
 interface IHeaderProps {

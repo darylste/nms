@@ -1,10 +1,8 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
-import Text from '../../Atoms/Text/Text';
-import Spacer from '../../Atoms/Spacer/Spacer';
-import FooterColumn from '../../Molecules/FooterColumn/FooterColumn';
+import { Text, Spacer, FooterColumn } from '@atomic';
+import { IFooterColumnProps } from '@types';
 
-import { IFooterColumnProps } from '../../../../utils/types';
 import logo from '../../../../public/assets/images/logo-black.svg';
 import styles from './Footer.module.scss';
 

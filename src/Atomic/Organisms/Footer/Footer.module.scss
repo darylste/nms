@@ -1,0 +1,12 @@
+@import '../../../styles/variables.scss';
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: $spacing-2xl $spacing-xl;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+}

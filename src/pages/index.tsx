@@ -11,6 +11,7 @@ import historyIcon from '../../public/assets/icons/history.svg';
 import FeaturedEvents from '../Atomic/Organisms/FeaturedEvents/FeaturedEvents';
 import NewsletterSignup from '../Atomic/Molecules/NewsletterSignup/NewsletterSignup';
 import OurMuseums from '../Atomic/Organisms/OurMuseums/OurMuseums';
+import Footer from '../Atomic/Organisms/Footer/Footer';
 interface IMuseumRowProps {
   orientation: 'left' | 'right';
   location: string;
@@ -18,6 +19,20 @@ interface IMuseumRowProps {
   text: string[];
   imgUrl: string;
   imgAlt: string;
+}
+
+interface IFooterItemProps {
+  name: string;
+  url: string;
+}
+
+interface IFooterColumnProps {
+  title: string;
+  items: IFooterItemProps[];
+}
+interface IFooterProps {
+  infoText: string;
+  columns: IFooterColumnProps[];
 }
 
 export default function Home() {
@@ -132,6 +147,44 @@ export default function Home() {
     },
   ];
 
+  const footerData: IFooterProps = {
+    infoText:
+      "Our mission is to inspire and engage visitors with Scotland's rich history and culture, both online and in-person. Through our exhibitions, events, and educational programs, we strive to make learning about history fun and accessible to people of all ages and backgrounds. Join us on a journey of discovery and exploration, and discover the wonders of Scotland's past and present.",
+    columns: [
+      {
+        title: 'Browse',
+        items: [
+          { name: 'Home', url: '#' },
+          { name: 'Museums', url: '#' },
+          { name: 'Collections', url: '#' },
+          { name: 'Login', url: '#' },
+        ],
+      },
+      {
+        title: 'Upcoming Events',
+        items: [
+          {
+            name: "Ancient Discoveries: Unearthing Scotland's Hidden Treasures",
+            url: '#',
+          },
+          {
+            name: "Exploring Scotland's Industrial Heritage: From Coal Mines to Steam Engines",
+            url: '#',
+          },
+        ],
+      },
+      {
+        title: 'Contact',
+        items: [
+          { name: '398 Main Street, Glasgow, G1 2RL', url: '#' },
+          { name: 'getintouch@nms.co.uk', url: '#' },
+          { name: '0712 987 6543', url: '#' },
+          { name: '@NationalMuseumsScot', url: '#' },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -151,6 +204,7 @@ export default function Home() {
       <FeaturedEvents {...featuredEventsData} />
       <NewsletterSignup />
       <OurMuseums museums={museumsData} />
+      <Footer {...footerData} />
     </div>
   );
 }

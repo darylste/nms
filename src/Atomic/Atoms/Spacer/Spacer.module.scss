@@ -5,6 +5,9 @@
 }
 
 .top {
+  &-2xs {
+    margin-top: $spacing-2xs;
+  }
   &-xs {
     margin-top: $spacing-xs;
   }
@@ -26,6 +29,9 @@
 }
 
 .right {
+  &-2xs {
+    margin-right: $spacing-2xs;
+  }
   &-xs {
     margin-right: $spacing-xs;
   }
@@ -47,6 +53,9 @@
 }
 
 .bottom {
+  &-2xs {
+    margin-bottom: $spacing-2xs;
+  }
   &-xs {
     margin-bottom: $spacing-xs;
   }
@@ -68,6 +77,9 @@
 }
 
 .left {
+  &-2xs {
+    margin-left: $spacing-2xs;
+  }
   &-xs {
     margin-left: $spacing-xs;
   }

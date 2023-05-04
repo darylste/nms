@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import styles from './Spacer.module.scss';
 
-type sizes = '2xl' | 'xl' | 'lg' | 'rg' | 'sm' | 'xs';
+type sizes = '2xl' | 'xl' | 'lg' | 'rg' | 'sm' | 'xs' | '2xs';
 
 interface ISpacerProps {
   top?: sizes;

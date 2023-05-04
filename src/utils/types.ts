@@ -28,3 +28,18 @@ export interface IGridRowProps {
   imgUrl: string;
   imgAlt: string;
 }
+
+export interface IOneOfThreeRowProps {
+  orientation: 'left' | 'right';
+  imgUrl: string;
+  imgAlt: string;
+  subheading: string;
+  heading: string;
+  text: string[];
+  btnText: string;
+  btnUrl: string;
+}
+
+export interface IOneOfThreeGridProps {
+  content: IOneOfThreeRowProps[];
+}

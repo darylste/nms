@@ -1,15 +1,10 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
-import styles from './Header.module.scss';
-import logo from '../../../../public/assets/images/logo.svg';
-
 import Nav from '../../Molecules/Nav/Nav';
 
-interface INavItemProps {
-  page: string;
-  href: string;
-}
-
+import { INavItemProps } from '../../../../utils/types';
+import logo from '../../../../public/assets/images/logo.svg';
+import styles from './Header.module.scss';
 interface IHeaderProps {
   navItems: INavItemProps[];
 }

@@ -1,21 +1,12 @@
 import React, { FC } from 'react';
-import styles from './Footer.module.scss';
 import Image from 'next/image';
-
-import logo from '../../../../public/assets/images/logo-black.svg';
 import Text from '../../Atoms/Text/Text';
 import Spacer from '../../Atoms/Spacer/Spacer';
 import FooterColumn from '../../Molecules/FooterColumn/FooterColumn';
 
-interface IFooterItemProps {
-  name: string;
-  url: string;
-}
-
-interface IFooterColumnProps {
-  title: string;
-  items: IFooterItemProps[];
-}
+import { IFooterColumnProps } from '../../../../utils/types';
+import logo from '../../../../public/assets/images/logo-black.svg';
+import styles from './Footer.module.scss';
 
 interface IFooterProps {
   infoText: string;

@@ -1,10 +1,7 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.scss';
-
 import Header from '../Atomic/Organisms/Header/Header';
 import Hero from '../Atomic/Organisms/Hero/Hero';
 import OurWork from '../Atomic/Organisms/OurWork/OurWork';
-
 import collectionsIcon from '../../public/assets/icons/collections.svg';
 import eventsIcon from '../../public/assets/icons/events.svg';
 import historyIcon from '../../public/assets/icons/history.svg';
@@ -12,30 +9,18 @@ import FeaturedEvents from '../Atomic/Organisms/FeaturedEvents/FeaturedEvents';
 import NewsletterSignup from '../Atomic/Molecules/NewsletterSignup/NewsletterSignup';
 import OurMuseums from '../Atomic/Organisms/OurMuseums/OurMuseums';
 import Footer from '../Atomic/Organisms/Footer/Footer';
-interface IMuseumRowProps {
-  orientation: 'left' | 'right';
-  location: string;
-  title: string;
-  text: string[];
-  imgUrl: string;
-  imgAlt: string;
-}
 
-interface IFooterItemProps {
-  name: string;
-  url: string;
-}
-
-interface IFooterColumnProps {
-  title: string;
-  items: IFooterItemProps[];
-}
-interface IFooterProps {
-  infoText: string;
-  columns: IFooterColumnProps[];
-}
+import { IMuseumRowProps } from '../../utils/types';
+import styles from '../styles/Home.module.scss';
 
 export default function Home() {
+  const heroData = {
+    title: "Unlock the Secrets of Scotland's Past at National Museums Scotland",
+    text: "National Museums Scotland is dedicated to bringing Scotland's fascinating history and culture to life through our diverse collection of museums and events. From ancient civilisations to modern-day innovations, we offer an interactive learning experience for all ages.",
+    btnText: 'Explore Our Exhibits',
+    btnUrl: '#',
+  };
+
   const items = [
     { page: 'Home', href: 'www.google.com' },
     { page: 'Museums', href: 'www.google.com' },
@@ -147,7 +132,7 @@ export default function Home() {
     },
   ];
 
-  const footerData: IFooterProps = {
+  const footerData = {
     infoText:
       "Our mission is to inspire and engage visitors with Scotland's rich history and culture, both online and in-person. Through our exhibitions, events, and educational programs, we strive to make learning about history fun and accessible to people of all ages and backgrounds. Join us on a journey of discovery and exploration, and discover the wonders of Scotland's past and present.",
     columns: [
@@ -199,7 +184,7 @@ export default function Home() {
         />
       </Head>
       <Header navItems={items} />
-      <Hero />
+      <Hero {...heroData} />
       <OurWork {...ourWorkData} />
       <FeaturedEvents {...featuredEventsData} />
       <NewsletterSignup />

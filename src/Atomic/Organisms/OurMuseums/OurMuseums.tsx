@@ -1,16 +1,8 @@
 import React, { FC } from 'react';
-
-import styles from './OurMuseums.module.scss';
 import MuseumRow from '../MuseumRow/MuseumRow';
 
-interface IMuseumRowProps {
-  orientation: 'left' | 'right';
-  location: string;
-  title: string;
-  text: string[];
-  imgUrl: string;
-  imgAlt: string;
-}
+import { IMuseumRowProps } from '../../../../utils/types';
+import styles from './OurMuseums.module.scss';
 
 interface IOurMuseumsProps {
   museums: IMuseumRowProps[];

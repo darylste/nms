@@ -1,15 +1,10 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
-import styles from './WorkBlock.module.scss';
 import Text from '../../Atoms/Text/Text';
 import Spacer from '../../Atoms/Spacer/Spacer';
 
-interface IWorkBlockProps {
-  icon: string;
-  iconName: string;
-  title: string;
-  text: string;
-}
+import { IWorkBlockProps } from '../../../../utils/types';
+import styles from './WorkBlock.module.scss';
 
 const WorkBlock: FC<IWorkBlockProps> = ({ icon, title, text }) => {
   return (

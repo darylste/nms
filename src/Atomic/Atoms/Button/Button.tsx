@@ -13,9 +13,7 @@ const Button: FC<IButtonProps> = ({ varient, href, children, fullWidth }) => {
   if (varient === 'cta') {
     return (
       <a
-        // if fullWidth, styles.fullWidth
         className={cn(fullWidth ? styles.fullWidth : null, styles.cta)}
-        // className={styles.cta}
         href={href}
       >
         {children}

@@ -1,13 +1,8 @@
 import React, { FC } from 'react';
-
-import styles from './Nav.module.scss';
 import Button from '../../Atoms/Button/Button';
 
-interface INavItemProps {
-  page: string;
-  href: string;
-}
-
+import styles from './Nav.module.scss';
+import { INavItemProps } from '../../../../utils/types';
 interface INavProps {
   items: INavItemProps[];
 }

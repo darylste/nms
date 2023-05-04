@@ -5,32 +5,30 @@ import Button from '../../Atoms/Button/Button';
 import Spacer from '../../Atoms/Spacer/Spacer';
 import Text from '../../Atoms/Text/Text';
 
-const Hero: FC = () => {
+interface IHeroProps {
+  title: string;
+  text: string;
+  btnText: string;
+  btnUrl: string;
+}
+
+const Hero: FC<IHeroProps> = ({ title, text, btnText, btnUrl }) => {
   return (
     <div className={styles.hero}>
       <div className='left'>
-        <Text varient='h1'>
-          Unlock the Secrets of Scotland&apos;s Past at National Museums
-          Scotland
-        </Text>
+        <Text varient='h1'>{title}</Text>
         <Spacer
           top='sm'
           bottom='sm'
         >
-          <Text varient='hero'>
-            National Museums Scotland is dedicated to bringing Scotland&apos;s
-            fascinating history and culture to life through our diverse
-            collection of museums and events. From ancient civilisations to
-            modern-day innovations, we offer an interactive learning experience
-            for all ages.
-          </Text>
+          <Text varient='hero'>{text}</Text>
         </Spacer>
         <Button
-          href='www.google.com'
+          href={btnUrl}
           varient='cta'
           fullWidth
         >
-          Explore Our Exhibits
+          {btnText}
         </Button>
       </div>
     </div>

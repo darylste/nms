@@ -1,9 +1,8 @@
 import React, { FC, Fragment } from 'react';
-import Text from '../../Atoms/Text/Text';
-import Spacer from '../../Atoms/Spacer/Spacer';
 import Image from 'next/image';
+import { Text, Spacer } from '@atomic';
+import { IMuseumRowProps } from '@types';
 
-import { IMuseumRowProps } from '../../../../utils/types';
 import styles from './MuseumRow.module.scss';
 
 const MuseumRow: FC<IMuseumRowProps> = ({

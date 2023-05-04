@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import MuseumRow from '../MuseumRow/MuseumRow';
+import { MuseumRow } from '@atomic';
+import { IMuseumRowProps } from '@types';
 
-import { IMuseumRowProps } from '../../../../utils/types';
 import styles from './OurMuseums.module.scss';
 
 interface IOurMuseumsProps {

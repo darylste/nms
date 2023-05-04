@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
-import Text from '../../Atoms/Text/Text';
-import Button from '../../Atoms/Button/Button';
+import { Button, Text } from '@atomic';
 
 import styles from './NewsletterSignup.module.scss';
 

@@ -1,10 +1,8 @@
-import React, { FC, Fragment, ReactNode } from 'react';
+import React, { FC, Fragment } from 'react';
+import Image from 'next/image';
+import { Text, Spacer } from '@atomic';
 
 import styles from './FeaturedEvents.module.scss';
-import Text from '../../Atoms/Text/Text';
-import Spacer from '../../Atoms/Spacer/Spacer';
-import Image from 'next/image';
-
 interface IEvents {
   title: string;
   imgUrl: string;

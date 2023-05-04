@@ -1,9 +1,7 @@
 import React, { FC } from 'react';
-import WorkBlock from '../../Molecules/WorkBlock/WorkBlock';
-import Spacer from '../../Atoms/Spacer/Spacer';
-import Text from '../../Atoms/Text/Text';
+import { Text, Spacer, WorkBlock } from '@atomic';
+import { IWorkBlockProps } from '@types';
 
-import { IWorkBlockProps } from '../../../../utils/types';
 import styles from './OurWork.module.scss';
 interface IOurWorkProps {
   title: string;

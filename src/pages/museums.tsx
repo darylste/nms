@@ -1,22 +1,7 @@
 import Head from 'next/head';
-import {
-  Header,
-  Hero,
-  OurWork,
-  FeaturedEvents,
-  NewsletterSignup,
-  OurMuseums,
-  Footer,
-} from '@atomic';
-import {
-  navItems,
-  heroData,
-  ourWorkData,
-  featuredEventsData,
-  museumsData,
-  footerData,
-} from '../utils/data';
+import { Header } from '@atomic';
 
+import { navItems } from '../utils/data';
 import styles from '../styles/Home.module.scss';
 
 export default function Home() {
@@ -34,12 +19,6 @@ export default function Home() {
         />
       </Head>
       <Header navItems={navItems} />
-      <Hero {...heroData} />
-      <OurWork {...ourWorkData} />
-      <FeaturedEvents {...featuredEventsData} />
-      <NewsletterSignup />
-      <OurMuseums museums={museumsData} />
-      <Footer {...footerData} />
     </div>
   );
 }

@@ -1,10 +1,7 @@
 import React, { FC } from 'react';
+import { Button, Spacer, Text } from '@atomic';
+
 import styles from './Hero.module.scss';
-
-import Button from '../../Atoms/Button/Button';
-import Spacer from '../../Atoms/Spacer/Spacer';
-import Text from '../../Atoms/Text/Text';
-
 interface IHeroProps {
   title: string;
   text: string;

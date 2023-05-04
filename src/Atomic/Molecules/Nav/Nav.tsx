@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import Button from '../../Atoms/Button/Button';
+import { Button } from '@atomic';
+import { INavItemProps } from '@types';
 
 import styles from './Nav.module.scss';
-import { INavItemProps } from '../../../../utils/types';
 interface INavProps {
   items: INavItemProps[];
 }

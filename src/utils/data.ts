@@ -5,17 +5,17 @@ import historyIcon from '../../public/assets/icons/history.svg';
 import { IMuseumRowProps } from './types';
 
 export const navItems = [
-  { page: 'Home', href: 'www.google.com' },
-  { page: 'Museums', href: 'www.google.com' },
-  { page: 'Collections', href: 'www.google.com' },
-  { page: 'Login', href: 'www.google.com' },
+  { page: 'Home', href: '/' },
+  { page: 'Museums', href: '/museums' },
+  { page: 'Collections', href: '/collections' },
+  { page: 'Login', href: '/login' },
 ];
 
 export const heroData = {
   title: "Unlock the Secrets of Scotland's Past at National Museums Scotland",
   text: "National Museums Scotland is dedicated to bringing Scotland's fascinating history and culture to life through our diverse collection of museums and events. From ancient civilisations to modern-day innovations, we offer an interactive learning experience for all ages.",
-  btnText: 'Explore Our Exhibits',
-  btnUrl: '#',
+  btnText: 'Find Your Nearest Museum',
+  btnUrl: '/museums',
 };
 
 export const ourWorkData = {
@@ -129,10 +129,10 @@ export const footerData = {
     {
       title: 'Browse',
       items: [
-        { name: 'Home', url: '#' },
-        { name: 'Museums', url: '#' },
-        { name: 'Collections', url: '#' },
-        { name: 'Login', url: '#' },
+        { name: 'Home', url: '/' },
+        { name: 'Museums', url: '/museums' },
+        { name: 'Collections', url: '/collections' },
+        { name: 'Login', url: '/login' },
       ],
     },
     {

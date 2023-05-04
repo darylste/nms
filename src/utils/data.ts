@@ -2,7 +2,7 @@ import collectionsIcon from '../../public/assets/icons/collections.svg';
 import eventsIcon from '../../public/assets/icons/events.svg';
 import historyIcon from '../../public/assets/icons/history.svg';
 
-import { IGridRowProps } from './types';
+import { IGridRowProps, IOneOfThreeRowProps } from './types';
 
 export const navItems = [
   { page: 'Home', href: '/' },
@@ -165,3 +165,53 @@ export const CTABannerProps = {
   btnText: 'Subscribe Now',
   btnUrl: '#',
 };
+
+export const ourMuseumsOverview = {
+  title: 'Our Museums',
+  text: "We are passionate about preserving and sharing our country's rich history with visitors from around the world. Our museums provide a window into Scotland's past, showcasing everything from ancient artefacts to modern art. We are proud to operate several museums throughout Scotland, each with a unique focus and fascinating exhibits that will leave you inspired and informed.",
+};
+
+export const oneOfThreeGridData: IOneOfThreeRowProps[] = [
+  {
+    orientation: 'right',
+    imgUrl:
+      'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+    imgAlt: 'placeholder',
+    subheading: 'Royal Exchange Square, Glasgow',
+    heading: 'The Gallery of Modern Art',
+    text: [
+      "The Gallery of Modern Art (GoMA) is located in the heart of Glasgow's city centre, occupying the former premises of the city's main library. The building was transformed into a museum of contemporary art in 1996 and has since become a major cultural hub in the city. The museum's collections focus on Scottish artists, as well as works by international artists, and include paintings, sculpture, installations, and photography.",
+      "GoMA offers a diverse and ever-changing program of exhibitions and events throughout the year, with something for everyone, from cutting-edge contemporary art to family-friendly activities. The museum's exhibitions are designed to engage and inspire visitors, making it an essential destination for art lovers and cultural enthusiasts.",
+    ],
+    btnText: 'Arrange a Visit',
+    btnUrl: '#',
+  },
+  {
+    orientation: 'left',
+    imgUrl:
+      'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+    imgAlt: 'placeholder',
+    subheading: 'Argyle Street, Glasgow',
+    heading: 'Kelvingrove Museum and Art Gallery',
+    text: [
+      "Located in Glasgow's West End, Kelvingrove Art Gallery and Museum is one of Scotland's most popular attractions. The museum's grand Victorian building houses one of Europe's great art collections, with over 8,000 objects on display. Visitors can explore a range of galleries showcasing art, sculpture, and artefacts from around the world, including works by Rembrandt, Dali, and Monet.",
+      "The museum's extensive collection of natural history exhibits, including life-size models of dinosaurs and animals, is sure to fascinate young and old alike. Kelvingrove also offers a program of events and activities throughout the year, including talks, workshops, and guided tours. With its stunning architecture and world-class collections, Kelvingrove is a must-visit destination for art and culture lovers.",
+    ],
+    btnText: 'Arrange a Visit',
+    btnUrl: '#',
+  },
+  {
+    orientation: 'right',
+    imgUrl:
+      'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+    imgAlt: 'placeholder',
+    subheading: 'Pollock Country Park, Glasgow',
+    heading: 'The Burrell Collection',
+    text: [
+      'The Burrell Collection is located in Pollok Country Park, on the outskirts of Glasgow. The museum houses the personal collection of shipping magnate Sir William Burrell, who amassed an incredible array of artworks and artefacts throughout his life. The collection comprises over 9,000 objects, including art, sculpture, and artefacts from around the world, ranging from ancient Egypt to contemporary art.',
+      "Visitors can explore a range of galleries showcasing everything from medieval art to Asian artefacts, as well as Sir William's collection of stained glass, furniture, and textiles. The museum is set within beautiful gardens and woodlands, which visitors can explore as part of their visit. With its stunning collection and tranquil surroundings, the Burrell Collection is a unique and unforgettable destination for art and culture lovers.",
+    ],
+    btnText: 'Arrange a Visit',
+    btnUrl: '#',
+  },
+];

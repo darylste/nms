@@ -2,7 +2,7 @@ import collectionsIcon from '../../public/assets/icons/collections.svg';
 import eventsIcon from '../../public/assets/icons/events.svg';
 import historyIcon from '../../public/assets/icons/history.svg';
 
-import { IMuseumRowProps } from './types';
+import { IGridRowProps } from './types';
 
 export const navItems = [
   { page: 'Home', href: '/' },
@@ -83,7 +83,7 @@ export const featuredEventsData = {
   ],
 };
 
-export const museumsData: IMuseumRowProps[] = [
+export const museumsData: IGridRowProps[] = [
   {
     orientation: 'left',
     location: 'Royal Exchange Square, Glasgow',
@@ -158,4 +158,10 @@ export const footerData = {
       ],
     },
   ],
+};
+
+export const CTABannerProps = {
+  text: 'Stay up to date with the latest news and events sign up for our newsletter today!',
+  btnText: 'Subscribe Now',
+  btnUrl: '#',
 };

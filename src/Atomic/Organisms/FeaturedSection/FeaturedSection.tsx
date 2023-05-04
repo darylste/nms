@@ -2,7 +2,7 @@ import React, { FC, Fragment } from 'react';
 import Image from 'next/image';
 import { Text, Spacer } from '@atomic';
 
-import styles from './FeaturedEvents.module.scss';
+import styles from './FeaturedSection.module.scss';
 interface IEvents {
   title: string;
   imgUrl: string;
@@ -10,15 +10,19 @@ interface IEvents {
   eventUrl: string;
 }
 
-interface IFeaturedEventsProps {
+interface IFeaturedSectionProps {
   title: string;
   text: string[];
   events: IEvents[];
 }
 
-const FeaturedEvents: FC<IFeaturedEventsProps> = ({ title, text, events }) => {
+const FeaturedSection: FC<IFeaturedSectionProps> = ({
+  title,
+  text,
+  events,
+}) => {
   return (
-    <div className={styles.featuredEvents}>
+    <div className={styles.featuredSection}>
       <div className={styles.left}>
         <Spacer
           top='sm'
@@ -54,4 +58,4 @@ const FeaturedEvents: FC<IFeaturedEventsProps> = ({ title, text, events }) => {
   );
 };
 
-export default FeaturedEvents;
+export default FeaturedSection;

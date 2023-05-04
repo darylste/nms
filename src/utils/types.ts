@@ -20,7 +20,7 @@ export interface IWorkBlockProps {
   text: string;
 }
 
-export interface IMuseumRowProps {
+export interface IGridRowProps {
   orientation: 'left' | 'right';
   location: string;
   title: string;

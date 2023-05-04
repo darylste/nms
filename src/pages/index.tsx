@@ -3,9 +3,9 @@ import {
   Header,
   Hero,
   OurWork,
-  FeaturedEvents,
-  NewsletterSignup,
-  OurMuseums,
+  FeaturedSection,
+  CTABanner,
+  GridSection,
   Footer,
 } from '@atomic';
 import {
@@ -15,6 +15,7 @@ import {
   featuredEventsData,
   museumsData,
   footerData,
+  CTABannerProps,
 } from '../utils/data';
 
 import styles from '../styles/Home.module.scss';
@@ -36,9 +37,9 @@ export default function Home() {
       <Header navItems={navItems} />
       <Hero {...heroData} />
       <OurWork {...ourWorkData} />
-      <FeaturedEvents {...featuredEventsData} />
-      <NewsletterSignup />
-      <OurMuseums museums={museumsData} />
+      <FeaturedSection {...featuredEventsData} />
+      <CTABanner {...CTABannerProps} />
+      <GridSection content={museumsData} />
       <Footer {...footerData} />
     </div>
   );

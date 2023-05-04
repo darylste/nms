@@ -1,16 +1,16 @@
 export { Button, Spacer, Text } from './Atoms/index';
 export {
   FooterColumn,
+  GridRow,
   Nav,
-  NewsletterSignup,
+  CTABanner,
   WorkBlock,
 } from './Molecules/index';
 export {
-  FeaturedEvents,
+  FeaturedSection,
   Footer,
   Header,
   Hero,
-  MuseumRow,
-  OurMuseums,
+  GridSection,
   OurWork,
 } from './Organisms/index';

@@ -1,11 +1,11 @@
 import React, { FC, Fragment } from 'react';
 import Image from 'next/image';
 import { Text, Spacer } from '@atomic';
-import { IMuseumRowProps } from '@types';
+import { IGridRowProps } from '@types';
 
-import styles from './MuseumRow.module.scss';
+import styles from './GridRow.module.scss';
 
-const MuseumRow: FC<IMuseumRowProps> = ({
+const GridRow: FC<IGridRowProps> = ({
   orientation,
   location,
   title,
@@ -76,4 +76,4 @@ const MuseumRow: FC<IMuseumRowProps> = ({
   );
 };
 
-export default MuseumRow;
+export default GridRow;

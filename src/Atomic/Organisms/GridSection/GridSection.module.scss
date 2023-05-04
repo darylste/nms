@@ -1,6 +1,6 @@
 @import '@styles/variables.scss';
 
-.ourMuseums {
+.gridSection {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: $spacing-3xl;

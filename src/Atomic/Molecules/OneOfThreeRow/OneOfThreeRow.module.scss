@@ -1,0 +1,45 @@
+@import '@styles/variables';
+
+.row {
+  display: grid;
+  padding: $spacing-2xl $spacing-xl;
+
+  &.right {
+    grid-template-columns: 1fr 2fr;
+    background-color: $color-secondary-tint;
+    color: $color-white;
+  }
+
+  &.left {
+    grid-template-columns: 2fr 1fr;
+    grid-auto-flow: dense;
+
+    & .imgContainer {
+      grid-column: 2;
+    }
+    & .textContainer {
+      padding-right: $spacing-xl;
+      padding-left: 0;
+    }
+  }
+}
+
+.imgContainer {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  & > * {
+    border-radius: 20px;
+  }
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: $spacing-xl;
+
+  & p:not(:last-of-type) {
+    margin-bottom: $spacing-xs;
+  }
+}

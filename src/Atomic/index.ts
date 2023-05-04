@@ -1,9 +1,11 @@
 export { Button, Spacer, Text } from './Atoms/index';
 export {
+  CTABanner,
   FooterColumn,
   GridRow,
   Nav,
-  CTABanner,
+  OneOfThreeRow,
+  PageOverview,
   WorkBlock,
 } from './Molecules/index';
 export {
@@ -12,5 +14,6 @@ export {
   Header,
   Hero,
   GridSection,
+  OneOfThreeGrid,
   OurWork,
 } from './Organisms/index';

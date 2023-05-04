@@ -1,0 +1,14 @@
+@import '../../../styles/variables.scss';
+
+.footerColumn {
+  text-align: center;
+}
+
+.footerLink {
+  &:hover {
+    color: $color-accent;
+  }
+  &:active {
+    color: $color-accent-tint;
+  }
+}

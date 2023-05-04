@@ -21,7 +21,7 @@ const Nav: FC<INavProps> = ({ items }) => {
         ))}
       </ul>
       <Button
-        href='www.google.com'
+        href='/events'
         varient='cta'
       >
         View Our Events

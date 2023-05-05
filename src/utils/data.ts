@@ -220,3 +220,54 @@ export const ourCollectionsOverview = {
   title: 'Our Collections',
   text: "At National Museums Scotland, we take pride in curating a diverse and extensive collection of artefacts that showcase Scotland's rich cultural and historical heritage. Our team of experts works tirelessly to acquire, preserve, and interpret these collections, ensuring that they remain accessible for generations to come. ",
 };
+
+export const collectionResultsData = [
+  {
+    imgUrl:
+      'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+    imgAlt: 'placeholder',
+    title: 'Mackintosh and the Glasgow Style',
+    location: 'Kelvingrove Art Gallery',
+    pageUrl: '#',
+  },
+  {
+    imgUrl:
+      'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+    imgAlt: 'placeholder',
+    title: 'The Steven Campbell Trust Collection',
+    location: 'The Gallery of Modern Art',
+    pageUrl: '#',
+  },
+  {
+    imgUrl:
+      'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+    imgAlt: 'placeholder',
+    title: 'Sculpture and Decorative Arts',
+    location: 'The Burrell Collection',
+    pageUrl: '#',
+  },
+  {
+    imgUrl:
+      'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+    imgAlt: 'placeholder',
+    title: 'Chinese and Japanese Art',
+    location: 'The Burrell Collection',
+    pageUrl: '#',
+  },
+  {
+    imgUrl:
+      'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+    imgAlt: 'placeholder',
+    title: 'European Armour and Arms',
+    location: 'Kelvingrove Art Gallery',
+    pageUrl: '#',
+  },
+  {
+    imgUrl:
+      'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+    imgAlt: 'placeholder',
+    title: 'The Whistler Collection',
+    location: 'The Gallery of Modern Art',
+    pageUrl: '#',
+  },
+];

@@ -3,7 +3,17 @@ import React, { FC, ReactNode } from 'react';
 import styles from './Text.module.scss';
 
 interface ITextProps {
-  varient: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body' | 'hero' | 'footer';
+  varient:
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'h6'
+    | 'body'
+    | 'hero'
+    | 'footer'
+    | 'button';
   children: ReactNode;
 }
 
@@ -27,6 +37,8 @@ const Text: FC<ITextProps> = ({ varient, children }) => {
       return <p className={styles.hero}>{children}</p>;
     case 'footer':
       return <p className={styles.footer}>{children}</p>;
+    case 'button':
+      return <p className={styles.button}>{children}</p>;
     default:
       return <p className={styles.body}>{children}</p>;
   }

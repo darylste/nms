@@ -1,0 +1,15 @@
+@import '@styles/variables';
+
+.searchResults {
+  padding: $spacing-2xl $spacing-xl;
+}
+
+.topText {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottomText {
+  display: flex;
+  justify-content: center;
+}

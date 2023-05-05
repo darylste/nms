@@ -5,3 +5,5 @@ export { default as Hero } from './Hero/Hero';
 export { default as GridSection } from './GridSection/GridSection';
 export { default as OneOfThreeGrid } from './OneOfThreeGrid/OneOfThreeGrid';
 export { default as OurWork } from './OurWork/OurWork';
+export { default as SearchResults } from './SearchResults/SearchResults';
+export { default as ThreeColGrid } from './ThreeColGrid/ThreeColGrid';

@@ -215,3 +215,8 @@ export const oneOfThreeGridData: IOneOfThreeRowProps[] = [
     btnUrl: '#',
   },
 ];
+
+export const ourCollectionsOverview = {
+  title: 'Our Collections',
+  text: "At National Museums Scotland, we take pride in curating a diverse and extensive collection of artefacts that showcase Scotland's rich cultural and historical heritage. Our team of experts works tirelessly to acquire, preserve, and interpret these collections, ensuring that they remain accessible for generations to come. ",
+};

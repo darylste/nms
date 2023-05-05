@@ -1,0 +1,21 @@
+@import '@styles/variables';
+
+.threeColGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-sm;
+}
+
+.result {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  height: 300px;
+}
+
+.resultImg {
+  z-index: -1;
+}

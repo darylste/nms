@@ -1,0 +1,25 @@
+@import '@styles/variables';
+
+.twoColGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.right {
+  grid-auto-flow: dense;
+
+  & .imgContainer {
+    grid-column: 1;
+  }
+  & .textContainer {
+    grid-column: 2;
+  }
+}
+
+.textContainer {
+  padding: $spacing-2xl $spacing-lg;
+}
+
+.imgContainer {
+  position: relative;
+}

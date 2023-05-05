@@ -33,7 +33,6 @@ const FeaturedSection: FC<IFeaturedSectionProps> = ({
           {text.map((paragraph, i) => (
             <Fragment key={i}>
               <Text varient='body'>{paragraph}</Text>
-              <Spacer top='xs' />
             </Fragment>
           ))}
         </Spacer>

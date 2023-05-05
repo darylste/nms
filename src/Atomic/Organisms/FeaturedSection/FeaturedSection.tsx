@@ -50,7 +50,7 @@ const FeaturedSection: FC<IFeaturedSectionProps> = ({
               alt={imgAlt}
               fill
             />
-            <Text varient='h5'>TEXT</Text>
+            <Text varient='h5'>{title}</Text>
           </a>
         ))}
       </div>

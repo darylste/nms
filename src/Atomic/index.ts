@@ -16,4 +16,6 @@ export {
   GridSection,
   OneOfThreeGrid,
   OurWork,
+  SearchResults,
+  ThreeColGrid,
 } from './Organisms/index';

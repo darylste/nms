@@ -43,3 +43,11 @@ export interface IOneOfThreeRowProps {
 export interface IOneOfThreeGridProps {
   content: IOneOfThreeRowProps[];
 }
+
+export interface IResultProps {
+  imgUrl: string;
+  imgAlt: string;
+  title: string;
+  location: string;
+  pageUrl: string;
+}

@@ -1,10 +1,11 @@
 import Head from 'next/head';
-import { Header, OneOfThreeGrid, PageOverview } from '@atomic';
+import { Footer, Header, OneOfThreeGrid, PageOverview } from '@atomic';
 
 import {
   navItems,
   oneOfThreeGridData,
   ourMuseumsOverview,
+  footerData,
 } from '../utils/data';
 import styles from '../styles/Home.module.scss';
 
@@ -25,6 +26,7 @@ export default function Home() {
       <Header navItems={navItems} />
       <PageOverview {...ourMuseumsOverview} />
       <OneOfThreeGrid content={oneOfThreeGridData} />
+      <Footer {...footerData} />
     </div>
   );
 }

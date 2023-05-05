@@ -340,3 +340,8 @@ export const singleMuseumIntroData: ITwoColGridProps = {
     'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
   imgAlt: 'placeholder',
 };
+
+export const eventSectionOverview = {
+  title: "Events We're Hosting",
+  text: "From world-class exhibitions to interactive workshops and talks, we offer a wide range of events that are designed to inspire and educate. Whether you're a history buff, a science lover, or simply looking for a fun day out with the family, we've got something for everyone. Our events are carefully curated by our team of experts, who are passionate about sharing Scotland's rich cultural heritage with the world. From ancient civilisations to contemporary art, our events showcase the best of Scotland's past and present.",
+};

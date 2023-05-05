@@ -1,7 +1,12 @@
 import Head from 'next/head';
-import { Footer, Header, OneOfThreeGrid, PageOverview } from '@atomic';
+import { Footer, Header, SectionOverview } from '@atomic';
 
-import { navItems, footerData, singleMuseumIntroData } from '../utils/data';
+import {
+  navItems,
+  footerData,
+  singleMuseumIntroData,
+  eventSectionOverview,
+} from '../utils/data';
 import styles from '../styles/Home.module.scss';
 import TwoColGrid from 'Atomic/Organisms/TwoColGrid/TwoColGrid';
 
@@ -21,6 +26,7 @@ export default function Home() {
       </Head>
       <Header navItems={navItems} />
       <TwoColGrid {...singleMuseumIntroData} />
+      <SectionOverview {...eventSectionOverview} />
       <Footer {...footerData} />
     </div>
   );

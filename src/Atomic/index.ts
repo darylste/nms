@@ -6,6 +6,7 @@ export {
   Nav,
   OneOfThreeRow,
   PageOverview,
+  SectionOverview,
   WorkBlock,
 } from './Molecules/index';
 export {

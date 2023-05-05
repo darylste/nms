@@ -271,3 +271,59 @@ export const collectionResultsData = [
     pageUrl: '#',
   },
 ];
+
+export const ourEventsOverview = {
+  title: 'Our Events',
+  text: 'We offer a range of tours and events that allow visitors to engage with our exhibits in exciting and interactive ways. Our knowledgeable guides bring the past to life through engaging talks and immersive experiences, while our workshops and demonstrations provide a hands-on learning experience for all ages.',
+};
+
+export const eventResultsData = [
+  {
+    imgUrl:
+      'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+    imgAlt: 'placeholder',
+    title: 'The Future of Art in a rapidly changing world.',
+    location: 'The Gallery of Modern Art',
+    pageUrl: '#',
+  },
+  {
+    imgUrl:
+      'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+    imgAlt: 'placeholder',
+    title: 'The Art of Food: Dishes inspired our collections.',
+    location: 'Kelvingrove Art Gallery',
+    pageUrl: '#',
+  },
+  {
+    imgUrl:
+      'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+    imgAlt: 'placeholder',
+    title: 'Art After Dark: Explore the museum after hours.',
+    location: 'The Burrell Collection',
+    pageUrl: '#',
+  },
+  {
+    imgUrl:
+      'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+    imgAlt: 'placeholder',
+    title: 'Art & Nature: The link between art and nature',
+    location: 'Kelvingrove Art Gallery',
+    pageUrl: '#',
+  },
+  {
+    imgUrl:
+      'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+    imgAlt: 'placeholder',
+    title: "Art Explorers: Explore the museum's exhibitions",
+    location: 'Kelvingrove Art Gallery',
+    pageUrl: '#',
+  },
+  {
+    imgUrl:
+      'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+    imgAlt: 'placeholder',
+    title: 'Hidden Gems - A Scavenger Hunt: find lost gems',
+    location: 'The Gallery of Modern Art',
+    pageUrl: '#',
+  },
+];

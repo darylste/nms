@@ -51,3 +51,12 @@ export interface IResultProps {
   location: string;
   pageUrl: string;
 }
+
+export interface ITwoColGridProps {
+  orientation: 'left' | 'right';
+  subheading: string;
+  heading: string;
+  text: string[];
+  imgUrl: string;
+  imgAlt: string;
+}

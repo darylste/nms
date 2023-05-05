@@ -38,8 +38,4 @@
   flex-direction: column;
   justify-content: center;
   padding-left: $spacing-xl;
-
-  & p:not(:last-of-type) {
-    margin-bottom: $spacing-xs;
-  }
 }

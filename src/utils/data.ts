@@ -2,7 +2,7 @@ import collectionsIcon from '../../public/assets/icons/collections.svg';
 import eventsIcon from '../../public/assets/icons/events.svg';
 import historyIcon from '../../public/assets/icons/history.svg';
 
-import { IGridRowProps, IOneOfThreeRowProps } from './types';
+import { IGridRowProps, IOneOfThreeRowProps, ITwoColGridProps } from './types';
 
 export const navItems = [
   { page: 'Home', href: '/' },
@@ -327,3 +327,16 @@ export const eventResultsData = [
     pageUrl: '#',
   },
 ];
+
+export const singleMuseumIntroData: ITwoColGridProps = {
+  orientation: 'left',
+  subheading: 'Royal Exchange Square, Glasgow',
+  heading: 'The Gallery of Modern Art',
+  text: [
+    "The Gallery of Modern Art (GoMA) is located in the heart of Glasgow's city centre, occupying the former premises of the city's main library. The building was transformed into a museum of contemporary art in 1996 and has since become a major cultural hub in the city. The museum's collections focus on Scottish artists, as well as works by international artists, and include paintings, sculpture, installations, and photography.",
+    " GoMA offers a diverse and ever-changing program of exhibitions and events throughout the year, with something for everyone, from cutting-edge contemporary art to family-friendly activities. The museum's exhibitions are designed to engage and inspire visitors, making it an essential destination for art lovers and cultural enthusiasts.",
+  ],
+  imgUrl:
+    'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+  imgAlt: 'placeholder',
+};

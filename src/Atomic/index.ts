@@ -14,9 +14,11 @@ export {
   Footer,
   Header,
   Hero,
+  MuseumEvents,
   GridSection,
   OneOfThreeGrid,
   OurWork,
   SearchResults,
   ThreeColGrid,
+  TwoColGrid,
 } from './Organisms/index';

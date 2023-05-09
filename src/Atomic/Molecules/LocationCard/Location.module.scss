@@ -1,0 +1,10 @@
+@import '@styles/variables';
+
+.locationCard {
+  background-color: $color-secondary-tint;
+  color: $color-white;
+  padding: $spacing-sm;
+  border-radius: 20px;
+  text-align: center;
+  z-index: 2;
+}

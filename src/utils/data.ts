@@ -345,3 +345,79 @@ export const eventSectionOverview = {
   title: "Events We're Hosting",
   text: "From world-class exhibitions to interactive workshops and talks, we offer a wide range of events that are designed to inspire and educate. Whether you're a history buff, a science lover, or simply looking for a fun day out with the family, we've got something for everyone. Our events are carefully curated by our team of experts, who are passionate about sharing Scotland's rich cultural heritage with the world. From ancient civilisations to contemporary art, our events showcase the best of Scotland's past and present.",
 };
+
+export const museumEventsData = {
+  overview: {
+    title: "Events We're Hosting",
+    text: "From world-class exhibitions to interactive workshops and talks, we offer a wide range of events that are designed to inspire and educate. Whether you're a history buff, a science lover, or simply looking for a fun day out with the family, we've got something for everyone. Our events are carefully curated by our team of experts, who are passionate about sharing Scotland's rich cultural heritage with the world. From ancient civilisations to contemporary art, our events showcase the best of Scotland's past and present.",
+  },
+  events: [
+    {
+      imgUrl:
+        'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+      imgAlt: 'placeholder',
+      title: "Ancient Discoveries: Unearthing Scotland's Hidden Treasures",
+      location: 'The Gallery of Modern Art',
+      pageUrl: '/eventOne',
+    },
+    {
+      imgUrl:
+        'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+      imgAlt: 'placeholder',
+      title: "Scotland's Industrial Heritage: From Coal Mines to Steam Engines",
+      location: 'The Gallery of Modern Art',
+      pageUrl: '/eventOne',
+    },
+    {
+      imgUrl:
+        'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+      imgAlt: 'placeholder',
+      title:
+        ' Pop-Up Exhibition: Exploring the Intersection of Art and Technology',
+      location: 'The Gallery of Modern Art',
+      pageUrl: '/eventOne',
+    },
+    {
+      imgUrl:
+        'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+      imgAlt: 'placeholder',
+      title: '“Art for All” Workshop: Creating Art with Recyclable Materials',
+      location: 'The Gallery of Modern Art',
+      pageUrl: '/eventOne',
+    },
+    {
+      imgUrl:
+        'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+      imgAlt: 'placeholder',
+      title: 'Guest Lecture: “The Evolution of Modern Art” by Dr Jones',
+      location: 'The Gallery of Modern Art',
+      pageUrl: '/eventOne',
+    },
+    {
+      imgUrl:
+        'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+      imgAlt: 'placeholder',
+      title: "Ancient Discoveries: Unearthing Scotland's Hidden Treasures",
+      location: 'The Gallery of Modern Art',
+      pageUrl: '/eventOne',
+    },
+  ],
+};
+
+export const locationSectionData = {
+  cardProps: {
+    list: [
+      'Royal Exchange Square, Glasgow, G1 3AH',
+      '0.3 Miles from Queen Street Train Station',
+      '0.3 Miles from Buchanan Street Subway Stop',
+      '0.6 Miles from Buchanan Bus Station',
+    ],
+    text: [
+      'The Gallery of Modern Art sits in the centre of Glasgow and has a variety of public transport links. The Gallery is within walking distance of Glasgows Subway for those staying in the Southside or Westend of Glasgow.',
+      'Those coming from further away are within walking distance from train and bus links.',
+    ],
+  },
+  imgUrl:
+    'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+  imgAlt: 'placeholder',
+};

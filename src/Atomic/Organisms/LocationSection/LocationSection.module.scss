@@ -1,0 +1,8 @@
+@import '@styles/variables';
+
+.locationSection {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: $spacing-2xl $spacing-xl;
+}

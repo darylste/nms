@@ -60,3 +60,8 @@ export interface ITwoColGridProps {
   imgUrl: string;
   imgAlt: string;
 }
+
+export interface ISectionOverviewProps {
+  title: string;
+  text: string;
+}

@@ -421,3 +421,41 @@ export const locationSectionData = {
     'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
   imgAlt: 'placeholder',
 };
+
+export const imageGalleryData = {
+  images: [
+    {
+      src: 'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+      alt: 'placeholder',
+    },
+    {
+      src: 'https://www.dummyimage.com/260x260/4b6858/000000.jpg&text=Placeholder',
+      alt: 'placeholder',
+    },
+    {
+      src: 'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+      alt: 'placeholder',
+    },
+    {
+      src: 'https://www.dummyimage.com/260x260/4b6858/000000.jpg&text=Placeholder',
+      alt: 'placeholder',
+    },
+
+    {
+      src: 'https://www.dummyimage.com/260x260/4b6858/000000.jpg&text=Placeholder',
+      alt: 'placeholder',
+    },
+    {
+      src: 'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+      alt: 'placeholder',
+    },
+    {
+      src: 'https://www.dummyimage.com/260x260/4b6858/000000.jpg&text=Placeholder',
+      alt: 'placeholder',
+    },
+    {
+      src: 'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+      alt: 'placeholder',
+    },
+  ],
+};

@@ -5,6 +5,7 @@ import {
   MuseumEvents,
   TwoColGrid,
   LocationSection,
+  ImageGallery,
 } from '@atomic';
 import {
   navItems,
@@ -12,6 +13,7 @@ import {
   singleMuseumIntroData,
   museumEventsData,
   locationSectionData,
+  imageGalleryData,
 } from '../utils/data';
 
 import styles from '../styles/Home.module.scss';
@@ -34,6 +36,7 @@ export default function Home() {
       <TwoColGrid {...singleMuseumIntroData} />
       <MuseumEvents {...museumEventsData} />
       <LocationSection {...locationSectionData} />
+      <ImageGallery {...imageGalleryData} />
       <Footer {...footerData} />
     </div>
   );

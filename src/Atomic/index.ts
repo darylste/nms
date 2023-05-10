@@ -3,6 +3,7 @@ export {
   CTABanner,
   FooterColumn,
   GridRow,
+  ImageGallery,
   LocationCard,
   Nav,
   OneOfThreeRow,

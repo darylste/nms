@@ -5,11 +5,11 @@ import { IWorkBlockProps } from '@types';
 
 import styles from './WorkBlock.module.scss';
 
-const WorkBlock: FC<IWorkBlockProps> = ({ icon, title, text }) => {
+const WorkBlock: FC<IWorkBlockProps> = ({ icon, iconAlt, title, text }) => {
   return (
     <div className={styles.workBlock}>
       <Image
-        alt={icon}
+        alt={iconAlt}
         src={icon}
         width={60}
         height={60}

@@ -1,0 +1,14 @@
+@import '@styles/variables';
+
+.fourBlockInfo {
+  background-color: $color-secondary-tint;
+  padding: $spacing-2xl $spacing-xl;
+  text-align: center;
+  color: $color-white;
+}
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-xl;
+}

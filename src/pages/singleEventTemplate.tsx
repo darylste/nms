@@ -4,6 +4,7 @@ import {
   FourBlockInfo,
   Header,
   PricingSection,
+  ReviewSection,
   TwoColGrid,
 } from '@atomic';
 import {
@@ -12,6 +13,7 @@ import {
   singleEventData,
   fourBlockData,
   pricingSectionData,
+  reviewSectionData,
 } from '../utils/data';
 
 import styles from '../styles/Home.module.scss';
@@ -34,6 +36,7 @@ export default function Home() {
       <TwoColGrid {...singleEventData} />
       <FourBlockInfo {...fourBlockData} />
       <PricingSection {...pricingSectionData} />
+      <ReviewSection {...reviewSectionData} />
       <Footer {...footerData} />
     </div>
   );

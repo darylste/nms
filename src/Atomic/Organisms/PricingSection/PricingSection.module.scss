@@ -1,0 +1,12 @@
+@import '@styles/variables';
+
+.pricingSection {
+  padding: $spacing-2xl $spacing-xl;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-xl;
+}

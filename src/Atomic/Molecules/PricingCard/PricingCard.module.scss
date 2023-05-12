@@ -1,0 +1,20 @@
+@import '@styles/variables';
+
+.pricingCard {
+  text-align: center;
+  color: $color-white;
+  padding: $spacing-xl $spacing-sm;
+  border-radius: 20px;
+
+  &.standard {
+    background-color: $color-primary-tint;
+  }
+
+  &.cta {
+    background-color: $color-primary-shade;
+  }
+
+  & li {
+    margin-bottom: $spacing-sm;
+  }
+}

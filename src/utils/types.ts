@@ -65,3 +65,14 @@ export interface ISectionOverviewProps {
   title: string;
   text: string;
 }
+
+export interface IPricingCardProps {
+  varient: 'standard' | 'cta';
+  title: string;
+  price: number;
+  benefits: string[];
+}
+
+export interface IPricingSectionProps {
+  cards: IPricingCardProps[];
+}

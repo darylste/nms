@@ -13,7 +13,8 @@ interface ITextProps {
     | 'body'
     | 'hero'
     | 'footer'
-    | 'button';
+    | 'button'
+    | 'cta';
   children: ReactNode;
 }
 
@@ -39,6 +40,8 @@ const Text: FC<ITextProps> = ({ varient, children }) => {
       return <p className={styles.footer}>{children}</p>;
     case 'button':
       return <p className={styles.button}>{children}</p>;
+    case 'cta':
+      return <p className={styles.cta}>{children}</p>;
     default:
       return <p className={styles.body}>{children}</p>;
   }

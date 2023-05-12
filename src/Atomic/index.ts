@@ -8,6 +8,7 @@ export {
   Nav,
   OneOfThreeRow,
   PageOverview,
+  PricingCard,
   SectionOverview,
   WorkBlock,
 } from './Molecules/index';
@@ -22,6 +23,7 @@ export {
   GridSection,
   OneOfThreeGrid,
   OurWork,
+  PricingSection,
   SearchResults,
   ThreeColGrid,
   TwoColGrid,

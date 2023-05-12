@@ -23,19 +23,19 @@ export const ourWorkData = {
   blocks: [
     {
       icon: collectionsIcon,
-      iconName: 'book icon',
+      iconAlt: 'book icon',
       title: 'Curating Collections',
       text: "At National Museums Scotland, we take pride in curating a diverse and extensive collection of artefacts that showcase Scotland's rich cultural and historical heritage. Our team of experts works tirelessly to acquire, preserve, and interpret these collections, ensuring that they remain accessible for generations to come.",
     },
     {
       icon: eventsIcon,
-      iconName: 'calender icon',
+      iconAlt: 'calender icon',
       title: 'Curating Collections',
       text: "At National Museums Scotland, we take pride in curating a diverse and extensive collection of artefacts that showcase Scotland's rich cultural and historical heritage. Our team of experts works tirelessly to acquire, preserve, and interpret these collections, ensuring that they remain accessible for generations to come.",
     },
     {
       icon: historyIcon,
-      iconName: 'scroll icon',
+      iconAlt: 'scroll icon',
 
       title: 'Curating Collections',
       text: "At National Museums Scotland, we take pride in curating a diverse and extensive collection of artefacts that showcase Scotland's rich cultural and historical heritage. Our team of experts works tirelessly to acquire, preserve, and interpret these collections, ensuring that they remain accessible for generations to come.",

@@ -15,7 +15,7 @@ export interface INavItemProps {
 
 export interface IWorkBlockProps {
   icon: string;
-  iconName: string;
+  iconAlt: string;
   title: string;
   text: string;
 }

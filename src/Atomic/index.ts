@@ -14,6 +14,7 @@ export {
 export {
   FeaturedSection,
   Footer,
+  FourBlockInfo,
   Header,
   Hero,
   LocationSection,

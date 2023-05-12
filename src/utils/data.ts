@@ -4,6 +4,7 @@ import historyIcon from '../../public/assets/icons/history.svg';
 import hourglassIcon from '../../public/assets/icons/hourglass.svg';
 import mapIcon from '../../public/assets/icons/map.svg';
 import globeIcon from '../../public/assets/icons/globe.svg';
+import quotesIcon from '../../public/assets/icons/quotes.svg';
 
 import {
   IGridRowProps,
@@ -526,4 +527,16 @@ export const pricingSectionData: IPricingSectionProps = {
       benefits: ['Its great', 'Amazing Experience', 'Educational'],
     },
   ],
+};
+
+export const reviewSectionData = {
+  img: 'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder',
+  imgAlt: 'placeholder',
+  icon: quotesIcon,
+  iconAlt: 'placeholder',
+  text: [
+    ' I recently attended the "Ancient Discoveries" event at The Burrell Collection, and I was absolutely blown away. The event was a fascinating journey through Scotland\'s ancient history, and I learned so much about the country\'s rich and complex past.',
+    "The event was divided into two parts. The first part was a guided tour of the museum's collection of ancient artefacts. The tour guide was incredibly knowledgeable and passionate about her work, and she did a wonderful job of bringing the history of each artefact to life. The second part of the event was a lecture by a leading archaeologist on the topic of Scotland's ancient history. The lecture was informative and engaging, and it gave me a deeper understanding of the country's past.",
+  ],
+  author: 'Mary Jones',
 };

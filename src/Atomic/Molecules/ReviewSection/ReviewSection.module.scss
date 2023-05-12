@@ -1,0 +1,14 @@
+@import '@styles/variables';
+
+.reviewSection {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: $spacing-xl;
+  background-color: $color-secondary-tint;
+  color: $color-white;
+  padding: $spacing-2xl $spacing-xl;
+}
+
+.imgContainer {
+  position: relative;
+}

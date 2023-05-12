@@ -9,6 +9,7 @@ export {
   OneOfThreeRow,
   PageOverview,
   PricingCard,
+  ReviewSection,
   SectionOverview,
   WorkBlock,
 } from './Molecules/index';

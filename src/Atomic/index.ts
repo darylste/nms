@@ -1,4 +1,4 @@
-export { Button, Spacer, Text } from './Atoms/index';
+export { Button, Input, Spacer, Text } from './Atoms/index';
 export {
   CTABanner,
   FooterColumn,
@@ -26,6 +26,7 @@ export {
   OurWork,
   PricingSection,
   SearchResults,
+  SidebarFooter,
   ThreeColGrid,
   TwoColGrid,
 } from './Organisms/index';

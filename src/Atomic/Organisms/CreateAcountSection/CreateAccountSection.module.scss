@@ -1,0 +1,27 @@
+@import '@styles/variables';
+
+.createAccountSection {
+  display: flex;
+  row-gap: $spacing-2xl;
+}
+
+.mainSection {
+  padding: $spacing-2xl;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.doubleInputContainer {
+  display: flex;
+  gap: $spacing-2xl;
+}
+
+.loginLink {
+  font-weight: bold;
+  text-decoration: underline;
+}

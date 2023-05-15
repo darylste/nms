@@ -20,6 +20,7 @@ export {
   Header,
   Hero,
   LocationSection,
+  LoginSection,
   MuseumEvents,
   GridSection,
   OneOfThreeGrid,

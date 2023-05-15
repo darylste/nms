@@ -4,6 +4,7 @@ export { default as FourBlockInfo } from './FourBlockInfo/FourBlockInfo';
 export { default as Header } from './Header/Header';
 export { default as Hero } from './Hero/Hero';
 export { default as LocationSection } from './LocationSection/LocationSection';
+export { default as LoginSection } from './LoginSection/LoginSection';
 export { default as MuseumEvents } from './MuseumEvents/MuseumEvents';
 export { default as GridSection } from './GridSection/GridSection';
 export { default as OneOfThreeGrid } from './OneOfThreeGrid/OneOfThreeGrid';

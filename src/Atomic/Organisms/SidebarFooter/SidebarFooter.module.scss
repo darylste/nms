@@ -1,0 +1,28 @@
+@import '@styles/variables';
+
+.sidebarFooter {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding: $spacing-xl;
+  background-color: $color-primary-shade;
+  color: $color-white;
+}
+
+.imgGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-xs;
+}
+
+.imgContainer {
+  position: relative;
+
+  &.logoImg {
+    aspect-ratio: 304/84;
+  }
+
+  &.gridImg {
+    aspect-ratio: 1/1;
+  }
+}

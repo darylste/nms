@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import {
+  BookingOverlay,
   Footer,
   FourBlockInfo,
   Header,
@@ -37,6 +38,7 @@ export default function Home() {
       <FourBlockInfo {...fourBlockData} />
       <PricingSection {...pricingSectionData} />
       <ReviewSection {...reviewSectionData} />
+      <BookingOverlay />
       <Footer {...footerData} />
     </div>
   );

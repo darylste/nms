@@ -1,3 +1,4 @@
+export { default as BookingOverlay } from './BookingOverlay/BookingOverlay';
 export { default as CTABanner } from './CTABanner/CTABanner';
 export { default as FooterColumn } from './FooterColumn/FooterColumn';
 export { default as GridRow } from './GridRow/GridRow';

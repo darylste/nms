@@ -1,5 +1,6 @@
 export { Button, Input, Spacer, Text } from './Atoms/index';
 export {
+  BookingOverlay,
   CTABanner,
   FooterColumn,
   GridRow,

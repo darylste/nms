@@ -1,3 +1,4 @@
+import { NextPage } from 'next';
 import Head from 'next/head';
 import {
   Header,
@@ -20,7 +21,13 @@ import {
 
 import styles from '../styles/Home.module.scss';
 
-export default function Home() {
+import { IEvent, IMuseum } from '../types';
+interface IHomeProps {
+  events: IEvent[];
+  museums: IMuseum[];
+}
+
+const Home: NextPage<IHomeProps> = ({ events = [], museums }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -37,10 +44,26 @@ export default function Home() {
       <Header navItems={navItems} />
       <Hero {...heroData} />
       <OurWork {...ourWorkData} />
-      <FeaturedSection {...featuredEventsData} />
+      <FeaturedSection events={events} />
       <CTABanner {...CTABannerProps} />
-      <GridSection content={museumsData} />
+      <GridSection museums={museums} />
       <Footer {...footerData} />
     </div>
   );
-}
+};
+
+export const getServerSideProps = async () => {
+  const fetchEvents = await fetch('http://localhost:3000/api/v1/events');
+  const fetchMuseums = await fetch('http://localhost:3000/api/v1/museums');
+  const events = await fetchEvents.json();
+  const museums = await fetchMuseums.json();
+
+  return {
+    props: {
+      events: events.data.events,
+      museums: museums.data.museums,
+    },
+  };
+};
+
+export default Home;

@@ -24,7 +24,7 @@ export interface IGridRowProps {
   orientation: 'left' | 'right';
   location: string;
   title: string;
-  text: string[];
+  shortDescription: string[];
   imgUrl: string;
   imgAlt: string;
 }

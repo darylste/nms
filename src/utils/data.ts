@@ -92,7 +92,7 @@ export const featuredEventsData = {
   ],
 };
 
-export const museumsData: IGridRowProps[] = [
+export const museumsData = [
   {
     orientation: 'left',
     location: 'Royal Exchange Square, Glasgow',

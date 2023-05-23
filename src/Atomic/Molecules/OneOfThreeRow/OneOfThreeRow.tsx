@@ -2,9 +2,18 @@ import React, { FC } from 'react';
 import Image from 'next/image';
 import cn from 'classnames';
 import { Button, Spacer, Text } from '@atomic';
-import { IOneOfThreeRowProps } from '@types';
 
 import styles from './OneOfThreeRow.module.scss';
+export interface IOneOfThreeRowProps {
+  orientation: 'left' | 'right';
+  imgUrl: string;
+  imgAlt: string;
+  subheading: string;
+  heading: string;
+  text: string[];
+  btnText: string;
+  btnUrl: string;
+}
 
 const OneOfThreeRow: FC<IOneOfThreeRowProps> = ({
   orientation,

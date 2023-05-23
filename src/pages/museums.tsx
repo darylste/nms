@@ -8,8 +8,15 @@ import {
   footerData,
 } from '../utils/data';
 import styles from '../styles/Home.module.scss';
+import { NextPage } from 'next';
 
-export default function Home() {
+import { IMuseum } from 'types';
+
+interface IMuseumProps {
+  museums: IMuseum[];
+}
+
+const Museum: NextPage<IMuseumProps> = ({ museums }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -25,8 +32,21 @@ export default function Home() {
       </Head>
       <Header navItems={navItems} />
       <PageOverview {...ourMuseumsOverview} />
-      <OneOfThreeGrid content={oneOfThreeGridData} />
+      <OneOfThreeGrid museums={museums} />
       <Footer {...footerData} />
     </div>
   );
-}
+};
+
+export const getServerSideProps = async () => {
+  const fetchMuseums = await fetch('http://localhost:3000/api/v1/museums');
+  const museums = await fetchMuseums.json();
+
+  return {
+    props: {
+      museums: museums.data.museums,
+    },
+  };
+};
+
+export default Museum;

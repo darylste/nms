@@ -1,38 +1,34 @@
 import React, { FC, Fragment } from 'react';
 import Image from 'next/image';
 import { Text, Spacer } from '@atomic';
-import { IGridRowProps } from '@types';
-
+import { IMuseum } from 'types';
 import styles from './GridRow.module.scss';
+interface IGridRowProps {
+  museum: IMuseum;
+  orientation: 'left' | 'right';
+}
 
-const GridRow: FC<IGridRowProps> = ({
-  orientation,
-  location,
-  title,
-  text,
-  imgUrl,
-  imgAlt,
-}) => {
+const GridRow: FC<IGridRowProps> = ({ museum, orientation }) => {
   return orientation === 'left' ? (
     <Fragment>
       <div className={styles.left}>
         <div className={styles.imgContainer}>
           <Image
-            src={imgUrl}
-            alt={imgAlt}
+            src={museum.imgUrl}
+            alt={museum.imgAlt}
             fill
           />
         </div>
       </div>
       <div className={styles.right}>
-        <Text varient='h5'>{location}</Text>
+        <Text varient='h5'>{museum.location}</Text>
         <Spacer
           top='xs'
           bottom='sm'
         >
-          <Text varient='h3'>{title}</Text>
+          <Text varient='h3'>{museum.name}</Text>
         </Spacer>
-        {text.map((paragraph, i) => (
+        {museum.shortDescription.map((paragraph, i) => (
           <Text
             key={i}
             varient='body'
@@ -45,14 +41,14 @@ const GridRow: FC<IGridRowProps> = ({
   ) : (
     <Fragment>
       <div className={styles.left}>
-        <Text varient='h5'>{location}</Text>
+        <Text varient='h5'>{museum.location}</Text>
         <Spacer
           top='xs'
           bottom='sm'
         >
-          <Text varient='h3'>{title}</Text>
+          <Text varient='h3'>{museum.name}</Text>
         </Spacer>
-        {text.map((paragraph, i) => (
+        {museum.shortDescription.map((paragraph, i) => (
           <Text
             key={i}
             varient='body'
@@ -65,8 +61,8 @@ const GridRow: FC<IGridRowProps> = ({
         {
           <div className={styles.imgContainer}>
             <Image
-              src={imgUrl}
-              alt={imgAlt}
+              src={museum.imgUrl}
+              alt={museum.imgAlt}
               fill
             />
           </div>

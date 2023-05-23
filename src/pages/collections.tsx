@@ -8,8 +8,14 @@ import {
   collectionResultsData,
 } from '../utils/data';
 import SearchResults from 'Atomic/Organisms/SearchResults/SearchResults';
+import { NextPage } from 'next';
+import { ICollection } from 'types';
 
-export default function Home() {
+interface ICollectionsPageProps {
+  collections: ICollection[];
+}
+
+const CollectionsPage: NextPage<ICollectionsPageProps> = ({ collections }) => {
   return (
     <div>
       <Head>
@@ -25,8 +31,23 @@ export default function Home() {
       </Head>
       <Header navItems={navItems} />
       <PageOverview {...ourCollectionsOverview} />
-      <SearchResults results={collectionResultsData} />
+      <SearchResults results={collections} />
       <Footer {...footerData} />
     </div>
   );
-}
+};
+
+export default CollectionsPage;
+
+export const getServerSideProps = async () => {
+  const fetchCollections = await fetch(
+    'http://localhost:3000/api/v1/collections',
+  );
+  const collections = await fetchCollections.json();
+
+  return {
+    props: {
+      collections: collections.data.collections,
+    },
+  };
+};

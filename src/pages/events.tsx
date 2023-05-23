@@ -8,8 +8,14 @@ import {
   collectionResultsData,
 } from '../utils/data';
 import SearchResults from 'Atomic/Organisms/SearchResults/SearchResults';
+import { NextPage } from 'next';
+import { IEvent } from 'types';
 
-export default function Home() {
+interface IEventsPageProps {
+  events: IEvent[];
+}
+
+const EventsPage: NextPage<IEventsPageProps> = ({ events }) => {
   return (
     <div>
       <Head>
@@ -25,8 +31,21 @@ export default function Home() {
       </Head>
       <Header navItems={navItems} />
       <PageOverview {...ourEventsOverview} />
-      <SearchResults results={collectionResultsData} />
+      <SearchResults results={events} />
       <Footer {...footerData} />
     </div>
   );
-}
+};
+
+export default EventsPage;
+
+export const getServerSideProps = async () => {
+  const fetchEvents = await fetch('http://localhost:3000/api/v1/events');
+  const events = await fetchEvents.json();
+
+  return {
+    props: {
+      events: events.data.events,
+    },
+  };
+};

@@ -2,10 +2,10 @@ import React, { FC } from 'react';
 import { Spacer, Text, ThreeColGrid } from '@atomic';
 
 import styles from './SearchResults.module.scss';
-import { ICollection } from 'types';
+import { ICollection, IEvent } from 'types';
 
 interface ISearchResultsProps {
-  results: ICollection[];
+  results: ICollection[] | IEvent[];
 }
 
 const SearchResults: FC<ISearchResultsProps> = ({ results }) => {

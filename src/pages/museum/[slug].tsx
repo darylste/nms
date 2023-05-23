@@ -15,10 +15,10 @@ import {
   museumEventsData,
   locationSectionData,
   imageGalleryData,
-} from '../utils/data';
+} from '../../utils/data';
 import { IEvent, IMuseum } from 'types';
 
-import styles from '../styles/Home.module.scss';
+import styles from '../../styles/Home.module.scss';
 
 interface ISingleMuseumPageProps {
   museum: IMuseum;
@@ -29,7 +29,7 @@ const SingleMuseumPage: NextPage<ISingleMuseumPageProps> = ({
   museum,
   events,
 }) => {
-  console.log(museum.imgUrl);
+  console.log(museum.shortDescription);
   return (
     <div className={styles.container}>
       <Head>
@@ -53,7 +53,7 @@ const SingleMuseumPage: NextPage<ISingleMuseumPageProps> = ({
         orientation='left'
       />
       <MuseumEvents events={events} />
-      <LocationSection {...locationSectionData} />
+      {/* <LocationSection {...locationSectionData} /> */}
       <ImageGallery {...imageGalleryData} />
       <Footer {...footerData} />
     </div>
@@ -62,19 +62,21 @@ const SingleMuseumPage: NextPage<ISingleMuseumPageProps> = ({
 
 export default SingleMuseumPage;
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (context: any) => {
+  const slug = context.params.slug;
+  console.log(slug);
   const fetchMuseum = await fetch(
-    'http://localhost:3000/api/v1/museums/646cc0c7b03b032badaffff3',
+    `http://localhost:3000/api/v1/museums/${slug}`,
   );
   const museum = await fetchMuseum.json();
   const fetchEvents = await fetch(
-    'http://localhost:3000/api/v1/events/museum/the-burrell-collection',
+    `http://localhost:3000/api/v1/events/museum/${slug}`,
   );
   const events = await fetchEvents.json();
 
   return {
     props: {
-      museum: museum.data.museum,
+      museum: museum.data.museum[0],
       events: events.data.events,
     },
   };

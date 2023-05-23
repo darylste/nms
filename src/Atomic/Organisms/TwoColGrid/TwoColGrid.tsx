@@ -10,10 +10,11 @@ const TwoColGrid: FC<ITwoColGridProps> = ({
   orientation,
   subheading,
   heading,
-  text,
+  text = [],
   imgUrl,
   imgAlt,
 }) => {
+  console.log(text);
   return (
     <div
       className={cn(

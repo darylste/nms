@@ -12,9 +12,9 @@ interface IThreeColGridProps {
 const ThreeColGrid: FC<IThreeColGridProps> = ({ results }) => {
   return (
     <div className={styles.threeColGrid}>
-      {results.map(({ imgUrl, imgAlt, name, hostMuseum }, i) => (
+      {results.map(({ imgUrl, imgAlt, name, hostMuseum }) => (
         <div
-          key={i}
+          key={name}
           className={styles.result}
         >
           <Image

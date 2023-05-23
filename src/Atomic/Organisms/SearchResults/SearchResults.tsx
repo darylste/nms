@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { Spacer, Text, ThreeColGrid } from '@atomic';
-import { IResultProps } from '@types';
 
 import styles from './SearchResults.module.scss';
+import { ICollection } from 'types';
 
 interface ISearchResultsProps {
-  results: IResultProps[];
+  results: ICollection[];
 }
 
 const SearchResults: FC<ISearchResultsProps> = ({ results }) => {

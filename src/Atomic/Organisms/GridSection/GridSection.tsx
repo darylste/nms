@@ -1,22 +1,28 @@
 import React, { FC } from 'react';
 import { GridRow } from '@atomic';
 import { IGridRowProps } from '@types';
+import { isOdd } from 'utils/isOdd';
 
 import styles from './GridSection.module.scss';
-
+import { IMuseum } from 'types';
 interface IGridSectionProps {
-  content: IGridRowProps[];
+  museums: IMuseum[];
 }
 
-const GridSection: FC<IGridSectionProps> = ({ content }) => {
+const GridSection: FC<IGridSectionProps> = ({ museums = [] }) => {
   return (
     <div className={styles.gridSection}>
-      {content.map((item, i) => (
-        <GridRow
-          key={i}
-          {...item}
-        />
-      ))}
+      {museums.map((item, i) => {
+        const orientation = isOdd(i) ? 'left' : 'right';
+
+        return (
+          <GridRow
+            key={item.name}
+            museum={item}
+            orientation={orientation}
+          />
+        );
+      })}
     </div>
   );
 };

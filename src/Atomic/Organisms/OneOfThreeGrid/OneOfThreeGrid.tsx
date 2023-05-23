@@ -1,16 +1,33 @@
 import React, { FC } from 'react';
 import { OneOfThreeRow } from '@atomic';
-import { IOneOfThreeGridProps } from '@types';
+import { IMuseum } from 'types';
 
-const OneOfThreeGrid: FC<IOneOfThreeGridProps> = ({ content }) => {
+import { isOdd } from 'utils/isOdd';
+
+interface IOneOfThreeGridProps {
+  museums: IMuseum[];
+}
+
+const OneOfThreeGrid: FC<IOneOfThreeGridProps> = ({ museums }) => {
   return (
     <div>
-      {content.map((row, i) => (
-        <OneOfThreeRow
-          key={i}
-          {...row}
-        />
-      ))}
+      {museums.map((museum, i) => {
+        const orientation = isOdd(i) ? 'left' : 'right';
+
+        return (
+          <OneOfThreeRow
+            key={i}
+            orientation={orientation}
+            heading={museum.name}
+            subheading={museum.location}
+            btnText='Click Me'
+            btnUrl='/here'
+            imgUrl={museum.imgUrl}
+            imgAlt={museum.imgAlt}
+            text={museum.shortDescription}
+          />
+        );
+      })}
     </div>
   );
 };

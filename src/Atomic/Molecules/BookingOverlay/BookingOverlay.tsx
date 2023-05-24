@@ -10,7 +10,7 @@ const BookingOverlay: FC = () => {
         <Text varient='h2'>Event Name</Text>
         <Text varient='h5'>Host Museum</Text>
         <div className={styles.left}>
-          <Input
+          {/* <Input
             name='adultTickets'
             placeholder='# Adult Tickets'
             type='number'
@@ -21,7 +21,7 @@ const BookingOverlay: FC = () => {
             placeholder='# Child Tickets'
             type='number'
             width='full'
-          />
+          /> */}
         </div>
         <div className={styles.right}>
           <Text varient='h4'>Booking Confirmation</Text>

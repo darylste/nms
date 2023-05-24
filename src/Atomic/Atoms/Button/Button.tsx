@@ -4,13 +4,20 @@ import cn from 'classnames';
 import styles from './Button.module.scss';
 
 interface IButtonProps {
-  varient: 'cta';
-  href: string;
+  varient: 'cta' | 'form';
+  href?: string;
   children: ReactNode;
   fullWidth?: boolean;
+  isSubmitting?: boolean;
 }
 
-const Button: FC<IButtonProps> = ({ varient, href, children, fullWidth }) => {
+const Button: FC<IButtonProps> = ({
+  varient,
+  href,
+  children,
+  fullWidth,
+  isSubmitting,
+}) => {
   if (varient === 'cta') {
     return (
       <a
@@ -21,7 +28,15 @@ const Button: FC<IButtonProps> = ({ varient, href, children, fullWidth }) => {
       </a>
     );
   } else {
-    return null;
+    return (
+      <button
+        type='submit'
+        className={cn(fullWidth ? styles.fullWidth : null, styles.cta)}
+        disabled={isSubmitting}
+      >
+        {children}
+      </button>
+    );
   }
 };
 

@@ -7,6 +7,13 @@ interface IReview {
   author: String;
 }
 
+export interface IFeature {
+  icon: string;
+  iconAlt: string;
+  title: string;
+  description: string;
+}
+
 export interface IEvent {
   _id: string;
   name: string;
@@ -21,4 +28,7 @@ export interface IEvent {
   premiumAdultPrice: number;
   premiumChildPrice: number;
   reviews: IReview[];
+  features: IFeature[];
+  standardBenefits: string[];
+  premiumBenefits: string[];
 }

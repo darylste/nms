@@ -3,16 +3,16 @@ import { Spacer, Text, WorkBlock } from '@atomic';
 import { IWorkBlockProps } from '@types';
 
 import styles from './FourBlockInfo.module.scss';
+import { IFeature } from 'types/event.types';
 
 interface IFourBlockInfoProps {
-  heading: string;
-  blocks: IWorkBlockProps[];
+  blocks: IFeature[];
 }
 
-const FourBlockInfo: FC<IFourBlockInfoProps> = ({ heading, blocks }) => {
+const FourBlockInfo: FC<IFourBlockInfoProps> = ({ blocks }) => {
   return (
     <section className={styles.fourBlockInfo}>
-      <Text varient='h2'>{heading}</Text>
+      <Text varient='h2'>About the Experience</Text>
       <Spacer top='xl' />
       <div className={styles.blocks}>
         {blocks.map((block, i) => (

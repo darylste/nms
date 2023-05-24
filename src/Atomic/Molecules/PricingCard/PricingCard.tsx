@@ -1,19 +1,21 @@
 import React, { FC } from 'react';
 import { Text, Spacer, Button } from '@atomic';
-import { IPricingCardProps, IPricingSectionProps } from '@types';
 
 import styles from './PricingCard.module.scss';
 
-const PricingCard: FC<IPricingCardProps> = ({
-  varient,
-  title,
-  price,
-  benefits,
-}) => {
+interface IPricingCardProps {
+  varient: 'standard' | 'premium';
+  price: number;
+  benefits: string[];
+}
+
+const PricingCard: FC<IPricingCardProps> = ({ varient, price, benefits }) => {
   return (
     <div>
       <div className={`${styles[varient]} ${styles.pricingCard}`}>
-        <Text varient='h3'>{title}</Text>
+        <Text varient='h3'>
+          {varient === 'standard' ? 'Standard' : 'Premium'}
+        </Text>
         <Spacer
           top='sm'
           bottom='sm'

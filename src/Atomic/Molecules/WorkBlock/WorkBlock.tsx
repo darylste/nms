@@ -1,16 +1,16 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
 import { Text, Spacer } from '@atomic';
-import { IWorkBlockProps } from '@types';
+import { IFeature } from 'types/event.types';
 
 import styles from './WorkBlock.module.scss';
 
-const WorkBlock: FC<IWorkBlockProps> = ({ icon, iconAlt, title, text }) => {
+const WorkBlock: FC<IFeature> = ({ icon, iconAlt, title, description }) => {
   return (
     <div className={styles.workBlock}>
       <Image
-        alt={iconAlt}
-        src={icon}
+        alt={'placeholder'}
+        src={`/assets/icons/${icon}`}
         width={60}
         height={60}
       />
@@ -20,7 +20,7 @@ const WorkBlock: FC<IWorkBlockProps> = ({ icon, iconAlt, title, text }) => {
       >
         <Text varient='h3'>{title}</Text>
       </Spacer>
-      <Text varient='body'>{text}</Text>
+      <Text varient='body'>{description}</Text>
     </div>
   );
 };

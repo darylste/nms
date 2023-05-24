@@ -29,7 +29,6 @@ const SingleMuseumPage: NextPage<ISingleMuseumPageProps> = ({
   museum,
   events,
 }) => {
-  console.log(museum.shortDescription);
   return (
     <div className={styles.container}>
       <Head>
@@ -64,7 +63,6 @@ export default SingleMuseumPage;
 
 export const getServerSideProps = async (context: any) => {
   const slug = context.params.slug;
-  console.log(slug);
   const fetchMuseum = await fetch(
     `http://localhost:3000/api/v1/museums/${slug}`,
   );

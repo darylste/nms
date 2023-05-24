@@ -3,8 +3,15 @@ import { IMuseum } from './museum.types';
 interface IReview {
   review: string[];
   imgUrl: string;
-  imgAlt: String;
-  author: String;
+  imgAlt: string;
+  author: string;
+}
+
+export interface IFeature {
+  icon: string;
+  iconAlt: string;
+  title: string;
+  description: string;
 }
 
 export interface IEvent {
@@ -21,4 +28,7 @@ export interface IEvent {
   premiumAdultPrice: number;
   premiumChildPrice: number;
   reviews: IReview[];
+  features: IFeature[];
+  standardBenefits: string[];
+  premiumBenefits: string[];
 }

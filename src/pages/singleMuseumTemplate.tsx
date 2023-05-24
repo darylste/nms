@@ -29,7 +29,6 @@ const SingleMuseumPage: NextPage<ISingleMuseumPageProps> = ({
   museum,
   events,
 }) => {
-  console.log(museum.imgUrl);
   return (
     <div className={styles.container}>
       <Head>

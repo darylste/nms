@@ -3,9 +3,10 @@ import { Text, Spacer, WorkBlock } from '@atomic';
 import { IWorkBlockProps } from '@types';
 
 import styles from './OurWork.module.scss';
+import { IFeature } from 'types/event.types';
 interface IOurWorkProps {
   title: string;
-  blocks: IWorkBlockProps[];
+  blocks: IFeature[];
 }
 
 const OurWork: FC<IOurWorkProps> = ({ title, blocks }) => {
@@ -14,10 +15,13 @@ const OurWork: FC<IOurWorkProps> = ({ title, blocks }) => {
       <Text varient='h2'>{title}</Text>
       <Spacer top='lg' />
       <div className={styles.blocks}>
-        {blocks.map((block, i) => (
+        {blocks.map(({ icon, iconAlt, title, description }, i) => (
           <WorkBlock
             key={i}
-            {...block}
+            icon={icon}
+            iconAlt={iconAlt}
+            title={title}
+            description={description}
           />
         ))}
       </div>

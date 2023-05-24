@@ -1,14 +1,13 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
 import { Spacer, Text } from '@atomic';
+import icon from '../../../../public/assets/icons/quotes.svg';
 
 import styles from './ReviewSection.module.scss';
 
 export interface IReviewSectionProps {
   img: string;
   imgAlt: string;
-  icon: string;
-  iconAlt: string;
   text: string[];
   author: string;
 }
@@ -16,8 +15,7 @@ export interface IReviewSectionProps {
 const ReviewSection: FC<IReviewSectionProps> = ({
   img,
   imgAlt,
-  icon,
-  iconAlt,
+
   text,
   author,
 }) => {
@@ -37,7 +35,7 @@ const ReviewSection: FC<IReviewSectionProps> = ({
         >
           <Image
             src={icon}
-            alt={iconAlt}
+            alt='quotes icon'
             width={60}
             height={60}
           />

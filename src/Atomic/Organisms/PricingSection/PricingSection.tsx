@@ -1,21 +1,36 @@
 import React, { FC } from 'react';
 import { Spacer, Text, PricingCard } from '@atomic';
-import { IPricingSectionProps } from '@types';
 
 import styles from './PricingSection.module.scss';
 
-const PricingSection: FC<IPricingSectionProps> = ({ cards }) => {
+interface IPricingSectionProps {
+  standardBenefits: string[];
+  premiumBenefits: string[];
+  standardAdultPrice: number;
+  premiumAdultPrice: number;
+}
+
+const PricingSection: FC<IPricingSectionProps> = ({
+  standardBenefits,
+  premiumBenefits,
+  standardAdultPrice,
+  premiumAdultPrice,
+}) => {
   return (
     <div className={styles.pricingSection}>
       <Text varient='h2'>Get your Tickets</Text>
       <Spacer top='2xl' />
       <div className={styles.cards}>
-        {cards.map((card, i) => (
-          <PricingCard
-            key={i}
-            {...card}
-          />
-        ))}
+        <PricingCard
+          varient='standard'
+          price={standardAdultPrice}
+          benefits={standardBenefits}
+        />
+        <PricingCard
+          varient='premium'
+          price={premiumAdultPrice}
+          benefits={premiumBenefits}
+        />
       </div>
     </div>
   );

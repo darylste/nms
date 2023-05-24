@@ -5,6 +5,7 @@ import { Spacer, Text } from '@atomic';
 import { ITwoColGridProps } from '@types';
 
 import styles from './TwoColGrid.module.scss';
+import { isOdd } from 'utils/isOdd';
 
 const TwoColGrid: FC<ITwoColGridProps> = ({
   orientation,
@@ -14,7 +15,6 @@ const TwoColGrid: FC<ITwoColGridProps> = ({
   imgUrl,
   imgAlt,
 }) => {
-  console.log(text);
   return (
     <div
       className={cn(

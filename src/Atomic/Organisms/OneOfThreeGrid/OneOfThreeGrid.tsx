@@ -20,8 +20,8 @@ const OneOfThreeGrid: FC<IOneOfThreeGridProps> = ({ museums }) => {
             orientation={orientation}
             heading={museum.name}
             subheading={museum.location}
-            btnText='Click Me'
-            btnUrl='/here'
+            btnText='Find Out More'
+            btnUrl={`museum/${museum.slug}`}
             imgUrl={museum.imgUrl}
             imgAlt={museum.imgAlt}
             text={museum.shortDescription}

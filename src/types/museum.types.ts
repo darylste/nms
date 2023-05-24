@@ -1,5 +1,6 @@
 export interface IMuseum {
   name: string;
+  slug: string;
   location: string;
   shortDescription: string[];
   longDescription: string[];

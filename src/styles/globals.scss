@@ -32,3 +32,10 @@ a {
 li {
   list-style: none;
 }
+
+.error-msg {
+  color: #be3535;
+  font-size: $font-size-2xs;
+  margin: $spacing-xs 0 0 $spacing-xs;
+  gap: 0;
+}

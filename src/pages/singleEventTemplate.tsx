@@ -34,12 +34,32 @@ export default function Home() {
         />
       </Head>
       <Header navItems={navItems} />
-      <TwoColGrid {...singleEventData} />
-      <FourBlockInfo {...fourBlockData} />
-      <PricingSection {...pricingSectionData} />
-      <ReviewSection {...reviewSectionData} />
+      <TwoColGrid
+        heading={singleEventData.heading}
+        imgAlt={singleEventData.imgAlt}
+        imgUrl={singleEventData.imgUrl}
+        orientation={singleEventData.orientation}
+        subheading={singleEventData.subheading}
+        text={singleEventData.text}
+      />
+      <FourBlockInfo blocks={fourBlockData} />
+      <PricingSection
+        premiumAdultPrice={pricingSectionData.cards[0].price}
+        premiumBenefits={pricingSectionData.cards[0].benefits}
+        standardAdultPrice={pricingSectionData.cards[0].price}
+        standardBenefits={pricingSectionData.cards[0].benefits}
+      />
+      <ReviewSection
+        author={reviewSectionData.author}
+        img={reviewSectionData.img}
+        imgAlt={reviewSectionData.iconAlt}
+        text={reviewSectionData.text}
+      />
       <BookingOverlay />
-      <Footer {...footerData} />
+      <Footer
+        columns={footerData.columns}
+        infoText={footerData.infoText}
+      />
     </div>
   );
 }

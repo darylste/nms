@@ -43,7 +43,33 @@ const Home: NextPage<IHomeProps> = ({ events = [], museums }) => {
       </Head>
       <Header navItems={navItems} />
       <Hero {...heroData} />
-      <OurWork {...ourWorkData} />
+      <OurWork
+        title='What We Offer at National Museums Scotland'
+        blocks={[
+          {
+            icon: 'collections.svg',
+            iconAlt: 'book icon',
+            title: 'Curating Collections',
+            description:
+              "At National Museums Scotland, we take pride in curating a diverse and extensive collection of artefacts that showcase Scotland's rich cultural and historical heritage. Our team of experts works tirelessly to acquire, preserve, and interpret these collections, ensuring that they remain accessible for generations to come.",
+          },
+          {
+            icon: 'events.svg',
+            iconAlt: 'calender icon',
+            title: 'Curating Collections',
+            description:
+              "At National Museums Scotland, we take pride in curating a diverse and extensive collection of artefacts that showcase Scotland's rich cultural and historical heritage. Our team of experts works tirelessly to acquire, preserve, and interpret these collections, ensuring that they remain accessible for generations to come.",
+          },
+          {
+            icon: 'history.svg',
+            iconAlt: 'scroll icon',
+
+            title: 'Curating Collections',
+            description:
+              "At National Museums Scotland, we take pride in curating a diverse and extensive collection of artefacts that showcase Scotland's rich cultural and historical heritage. Our team of experts works tirelessly to acquire, preserve, and interpret these collections, ensuring that they remain accessible for generations to come.",
+          },
+        ]}
+      />
       <FeaturedSection events={events} />
       <CTABanner {...CTABannerProps} />
       <GridSection museums={museums} />

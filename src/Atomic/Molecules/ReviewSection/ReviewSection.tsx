@@ -8,8 +8,6 @@ import styles from './ReviewSection.module.scss';
 export interface IReviewSectionProps {
   img: string;
   imgAlt: string;
-  icon: string;
-  iconAlt: string;
   text: string[];
   author: string;
 }

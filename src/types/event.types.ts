@@ -3,8 +3,8 @@ import { IMuseum } from './museum.types';
 interface IReview {
   review: string[];
   imgUrl: string;
-  imgAlt: String;
-  author: String;
+  imgAlt: string;
+  author: string;
 }
 
 export interface IFeature {

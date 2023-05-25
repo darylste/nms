@@ -1,13 +1,9 @@
 import collectionsIcon from '../../public/assets/icons/collections.svg';
 import eventsIcon from '../../public/assets/icons/events.svg';
 import historyIcon from '../../public/assets/icons/history.svg';
-import hourglassIcon from '../../public/assets/icons/hourglass.svg';
-import mapIcon from '../../public/assets/icons/map.svg';
-import globeIcon from '../../public/assets/icons/globe.svg';
 import quotesIcon from '../../public/assets/icons/quotes.svg';
 
 import {
-  IGridRowProps,
   IOneOfThreeRowProps,
   ITwoColGridProps,
   IPricingSectionProps,
@@ -18,7 +14,6 @@ export const navItems = [
   { page: 'Home', href: '/' },
   { page: 'Museums', href: '/museums' },
   { page: 'Collections', href: '/collections' },
-  { page: 'Login', href: '/login' },
 ];
 
 export const heroData = {

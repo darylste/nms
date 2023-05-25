@@ -9,15 +9,7 @@ import {
   GridSection,
   Footer,
 } from '@atomic';
-import {
-  navItems,
-  heroData,
-  ourWorkData,
-  featuredEventsData,
-  museumsData,
-  footerData,
-  CTABannerProps,
-} from '../utils/data';
+import { navItems, heroData, footerData, CTABannerProps } from '../utils/data';
 
 import styles from '../styles/Home.module.scss';
 

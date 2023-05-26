@@ -4,7 +4,7 @@ import { SidebarFooter } from '@atomic';
 import { navItems, footerData } from '../utils/data';
 import CreateAccountSection from 'Atomic/Organisms/CreateAcountSection/CreateAccountSection';
 
-export default function Home() {
+const RegistrationPage = () => {
   return (
     <div>
       <Head>
@@ -21,4 +21,6 @@ export default function Home() {
       <CreateAccountSection />
     </div>
   );
-}
+};
+
+export default RegistrationPage;

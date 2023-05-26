@@ -22,12 +22,12 @@ import styles from '../../styles/Home.module.scss';
 
 interface ISingleMuseumPageProps {
   museum: IMuseum;
-  events: IEvent[];
+  event: IEvent[];
 }
 
 const SingleMuseumPage: NextPage<ISingleMuseumPageProps> = ({
   museum,
-  events,
+  event,
 }) => {
   return (
     <div className={styles.container}>
@@ -51,9 +51,9 @@ const SingleMuseumPage: NextPage<ISingleMuseumPageProps> = ({
         text={museum.shortDescription}
         orientation='left'
       />
-      <MuseumEvents events={events} />
+      <MuseumEvents events={event} />
       {/* <LocationSection {...locationSectionData} /> */}
-      <ImageGallery {...imageGalleryData} />
+      <ImageGallery images={museum.imgGallery} />
       <Footer {...footerData} />
     </div>
   );
@@ -67,15 +67,15 @@ export const getServerSideProps = async (context: any) => {
     `http://localhost:3000/api/v1/museums/${slug}`,
   );
   const museum = await fetchMuseum.json();
-  const fetchEvents = await fetch(
+  const fetchEvent = await fetch(
     `http://localhost:3000/api/v1/events/museum/${slug}`,
   );
-  const events = await fetchEvents.json();
+  const event = await fetchEvent.json();
 
   return {
     props: {
       museum: museum.data.museum[0],
-      events: events.data.events,
+      event: event.data.events,
     },
   };
 };

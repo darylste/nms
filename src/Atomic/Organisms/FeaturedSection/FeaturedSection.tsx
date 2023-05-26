@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { Text, Spacer } from '@atomic';
 import { IEvent } from 'types';
 
+import featuredImg from '/public/assets/images/featured.jpg';
+
 import styles from './FeaturedSection.module.scss';
 
 interface IFeaturedSectionProps {
@@ -49,14 +51,16 @@ const FeaturedSection: FC<IFeaturedSectionProps> = ({ events = [] }) => {
           <a
             key={_id}
             className={styles.imgContainer}
-            href={`/${slug}`}
+            href={`/event/${slug}`}
           >
+            <Text varient='h6'>{name}</Text>
             <Image
-              src={imgUrl}
+              className={styles.eventImg}
+              src={`/assets/images/${imgUrl}`}
               alt={imgAlt}
+              style={{ objectFit: 'cover', width: '100%', height: '100%' }}
               fill
             />
-            <Text varient='h6'>{name}</Text>
           </a>
         ))}
       </div>

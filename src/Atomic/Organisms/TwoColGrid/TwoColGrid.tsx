@@ -42,7 +42,7 @@ const TwoColGrid: FC<ITwoColGridProps> = ({
       <div className={styles.imgContainer}>
         <Image
           className={styles.img}
-          src={imgUrl}
+          src={`/assets/images/${imgUrl}`}
           alt={imgAlt}
           fill
         />

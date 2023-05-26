@@ -15,15 +15,15 @@ export interface IReviewSectionProps {
 const ReviewSection: FC<IReviewSectionProps> = ({
   img,
   imgAlt,
-
   text,
   author,
 }) => {
+  console.log(img);
   return (
     <div className={styles.reviewSection}>
       <div className={styles.imgContainer}>
         <Image
-          src={img}
+          src={`/assets/images/${img}`}
           alt={imgAlt}
           fill
         />

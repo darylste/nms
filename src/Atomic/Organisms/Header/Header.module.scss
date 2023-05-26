@@ -1,8 +1,15 @@
 @import '@styles/variables.scss';
+@import '@styles/mixins.scss';
 
 .header {
   display: flex;
   justify-content: space-between;
   background-color: $color-primary-shade;
   padding: $spacing-xs $spacing-xl;
+}
+
+@include media-mobile {
+  .header {
+    padding: $spacing-xs $spacing-rg;
+  }
 }

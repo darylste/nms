@@ -1,12 +1,27 @@
 @import '@styles/variables.scss';
+@import '@styles/mixins.scss';
 
 .footer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: $spacing-2xl $spacing-xl;
+  @include desktop-padding;
 }
 
 .logo {
   width: 100%;
   height: auto;
+}
+
+@include media-tablet-portrait {
+  .footer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-rg;
+  }
+}
+
+@include media-mobile {
+  .footer {
+    grid-template-columns: 1fr;
+    @include mobile-padding;
+  }
 }

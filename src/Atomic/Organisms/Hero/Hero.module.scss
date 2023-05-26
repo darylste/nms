@@ -22,7 +22,7 @@
   left: 0;
   width: 100;
   height: 100%;
-  padding: $spacing-2xl $spacing-xl;
+  @include desktop-padding;
 }
 
 @include media-laptop {
@@ -40,5 +40,11 @@
   }
   .overlay {
     grid-template-columns: 1fr;
+  }
+}
+
+@include media-mobile {
+  .left {
+    @include mobile-padding;
   }
 }

@@ -2,7 +2,7 @@
 @import '@styles/mixins.scss';
 
 .ourWork {
-  padding: $spacing-2xl $spacing-xl;
+  @include desktop-padding;
   text-align: center;
 }
 
@@ -15,5 +15,11 @@
 @include media-tablet-portrait {
   .blocks {
     grid-template-columns: 1fr;
+  }
+}
+
+@include media-mobile {
+  .ourWork {
+    @include mobile-padding;
   }
 }

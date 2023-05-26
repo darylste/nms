@@ -5,7 +5,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: $spacing-xl;
-  padding: $spacing-2xl $spacing-xl;
+  @include desktop-padding;
   background-color: $color-secondary-tint;
   color: $color-white;
 }
@@ -67,5 +67,11 @@
 @include media-tablet-portrait {
   .right {
     grid-template-columns: 1fr;
+  }
+}
+
+@include media-mobile {
+  .featuredSection {
+    @include mobile-padding;
   }
 }

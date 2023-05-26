@@ -15,3 +15,17 @@
     @content;
   }
 }
+
+@mixin media-mobile {
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin desktop-padding {
+  padding: $spacing-2xl $spacing-xl;
+}
+
+@mixin mobile-padding {
+  padding: $spacing-xl $spacing-sm;
+}

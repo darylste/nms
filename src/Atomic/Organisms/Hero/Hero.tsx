@@ -1,5 +1,8 @@
 import React, { FC } from 'react';
+import Image from 'next/image';
 import { Button, Spacer, Text } from '@atomic';
+
+import heroImg from '/public/assets/images/hero.jpg';
 
 import styles from './Hero.module.scss';
 interface IHeroProps {
@@ -12,21 +15,23 @@ interface IHeroProps {
 const Hero: FC<IHeroProps> = ({ title, text, btnText, btnUrl }) => {
   return (
     <div className={styles.hero}>
-      <div className='left'>
-        <Text varient='h1'>{title}</Text>
-        <Spacer
-          top='sm'
-          bottom='sm'
-        >
-          <Text varient='hero'>{text}</Text>
-        </Spacer>
-        <Button
-          href={btnUrl}
-          varient='cta'
-          fullWidth
-        >
-          {btnText}
-        </Button>
+      <div className={styles.overlay}>
+        <div className={styles.left}>
+          <Text varient='h1'>{title}</Text>
+          <Spacer
+            top='sm'
+            bottom='sm'
+          >
+            <Text varient='hero'>{text}</Text>
+          </Spacer>
+          <Button
+            href={btnUrl}
+            varient='cta'
+            fullWidth
+          >
+            {btnText}
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,41 @@
 @import '@styles/variables.scss';
+@import '@styles/mixins.scss';
 
 .hero {
+  background: rgba(255, 255, 255, 0.2) url('/assets/images/hero.jpg');
+  background-color: rgba(255, 255, 255, 0.2);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: fit-content;
+}
+
+.overlay {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 100vw;
+  height: 100%;
+}
+
+.left {
+  top: 0;
+  left: 0;
+  width: 100;
+  height: 100%;
   padding: $spacing-2xl $spacing-xl;
+}
+
+@include media-laptop {
+  .hero {
+    background-position: center;
+  }
+  .overlay {
+    grid-template-columns: 3fr 1fr;
+  }
+}
+
+@include media-tablet-portrait {
+  .overlay {
+    grid-template-columns: 1fr;
+  }
 }

@@ -73,7 +73,7 @@
   visibility: hidden;
 }
 
-@include tablet-width {
+@include media-tablet-landscape {
   .desktopNav {
     display: none;
     visibility: hidden;

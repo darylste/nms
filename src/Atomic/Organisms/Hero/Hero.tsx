@@ -1,8 +1,5 @@
 import React, { FC } from 'react';
-import Image from 'next/image';
 import { Button, Spacer, Text } from '@atomic';
-
-import heroImg from '/public/assets/images/hero.jpg';
 
 import styles from './Hero.module.scss';
 interface IHeroProps {

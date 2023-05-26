@@ -1,12 +1,32 @@
 @import '@styles/variables.scss';
+@import '@styles/mixins.scss';
 
-.nav {
+.nav,
+.desktopNav,
+.navList {
   display: flex;
   align-items: center;
 }
 
-.li {
+.hamburger {
+  display: none;
+  visibility: hidden;
+}
+
+.li,
+.mobileLi {
   font-weight: $font-weight-semi-bold;
+
+  &:hover {
+    filter: opacity(0.8);
+  }
+
+  &:active {
+    filter: opacity(0.5);
+  }
+}
+
+.li {
   color: $color-white;
 
   &:not(:last-of-type) {
@@ -16,12 +36,50 @@
   &:last-of-type {
     margin-right: $spacing-xl;
   }
+}
 
-  &:hover {
-    filter: opacity(0.8);
+.mobileLi {
+  color: $color-black;
+  padding-bottom: $spacing-rg;
+}
+
+.mobileNav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &List {
+    text-align: center;
   }
+}
 
-  &:active {
-    filter: opacity(0.5);
+.exit {
+  position: absolute;
+  right: $spacing-xl;
+  top: $spacing-rg;
+  z-index: 5;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+@include tablet-width {
+  .desktopNav {
+    display: none;
+    visibility: hidden;
+  }
+  .hamburger {
+    display: unset;
+    visibility: unset;
   }
 }

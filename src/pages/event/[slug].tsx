@@ -25,7 +25,7 @@ interface ISingleEventPageProps {
   event: IEvent;
 }
 
-const singleEventPage: FC<ISingleEventPageProps> = ({ event }) => {
+const SingleEventPage: FC<ISingleEventPageProps> = ({ event }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -67,7 +67,7 @@ const singleEventPage: FC<ISingleEventPageProps> = ({ event }) => {
   );
 };
 
-export default singleEventPage;
+export default SingleEventPage;
 
 export const getServerSideProps = async (context: any) => {
   const slug = context.params.slug;

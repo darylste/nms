@@ -1,3 +1,8 @@
+export interface IImage {
+  imgUrl: string;
+  imgAlt: string;
+}
+
 export interface IMuseum {
   name: string;
   slug: string;
@@ -6,4 +11,5 @@ export interface IMuseum {
   longDescription: string[];
   imgUrl: string;
   imgAlt: string;
+  imgGallery: IImage[];
 }

@@ -16,7 +16,7 @@ interface IMuseumProps {
   museums: IMuseum[];
 }
 
-const Museum: NextPage<IMuseumProps> = ({ museums }) => {
+const MuseumPage: NextPage<IMuseumProps> = ({ museums }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -49,4 +49,4 @@ export const getServerSideProps = async () => {
   };
 };
 
-export default Museum;
+export default MuseumPage;

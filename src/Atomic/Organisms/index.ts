@@ -1,3 +1,4 @@
+export { default as AdminPanel } from './AdminPanel/AdminPanel';
 export { default as FeaturedSection } from './FeaturedSection/FeaturedSection';
 export { default as Footer } from './Footer/Footer';
 export { default as FourBlockInfo } from './FourBlockInfo/FourBlockInfo';

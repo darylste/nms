@@ -44,7 +44,6 @@ export const getServerSideProps = async () => {
     'http://localhost:3000/api/v1/collections',
   );
   const collections = await fetchCollections.json();
-  console.log(collections.data.collections);
   return {
     props: {
       collections: collections.data.collections,

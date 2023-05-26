@@ -1,29 +1,24 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
+import { IImage } from '../../../types/museum.types';
 
 import styles from './ImageGallery.module.scss';
-
-interface IImageProps {
-  src: string;
-  alt: string;
-}
-
 interface IImageGalleryProps {
-  images: IImageProps[];
+  images: IImage[];
 }
 
 const ImageGallery: FC<IImageGalleryProps> = ({ images }) => {
   return (
     <section className={styles.imageGallery}>
-      {images.map(({ src, alt }, i) => (
+      {images.map(({ imgUrl, imgAlt }, i) => (
         <div
           key={i}
           className={styles.imageContainer}
         >
           <Image
             className={styles.image}
-            src={src}
-            alt={alt}
+            src={imgUrl}
+            alt={imgAlt}
             fill
           />
         </div>

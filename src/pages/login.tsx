@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import { LoginSection } from '@atomic';
+import { NextPage } from 'next';
 
-export default function Home() {
+const LoginPage: NextPage = () => {
   return (
     <div>
       <Head>
@@ -18,4 +19,6 @@ export default function Home() {
       <LoginSection />
     </div>
   );
-}
+};
+
+export default LoginPage;

@@ -15,6 +15,7 @@ export {
   WorkBlock,
 } from './Molecules/index';
 export {
+  AdminPanel,
   FeaturedSection,
   Footer,
   FourBlockInfo,

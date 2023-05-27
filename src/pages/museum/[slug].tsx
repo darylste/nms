@@ -46,7 +46,7 @@ const SingleMuseumPage: NextPage<ISingleMuseumPageProps> = ({
       <TwoColGrid
         heading={museum.name}
         subheading={museum.location}
-        imgUrl={museum.imgUrl}
+        imgUrl={`/assets/images/${museum.imgUrl}`}
         imgAlt={museum.imgAlt}
         text={museum.shortDescription}
         orientation='left'

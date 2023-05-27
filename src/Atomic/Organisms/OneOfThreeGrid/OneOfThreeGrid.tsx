@@ -22,7 +22,7 @@ const OneOfThreeGrid: FC<IOneOfThreeGridProps> = ({ museums }) => {
             subheading={museum.location}
             btnText='Find Out More'
             btnUrl={`museum/${museum.slug}`}
-            imgUrl={museum.imgUrl}
+            imgUrl={`/assets/images/${museum.imgUrl}`}
             imgAlt={museum.imgAlt}
             text={museum.shortDescription}
           />

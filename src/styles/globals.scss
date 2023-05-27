@@ -33,6 +33,10 @@ li {
   list-style: none;
 }
 
+img {
+  object-fit: cover;
+}
+
 .error-msg {
   color: #be3535;
   font-size: $font-size-2xs;

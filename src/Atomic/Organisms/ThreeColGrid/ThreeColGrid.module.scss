@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: $spacing-sm;
+  color: $color-white;
 }
 
 .result {
@@ -14,8 +15,28 @@
   align-items: center;
   text-align: center;
   height: 300px;
+
+  & div h5 {
+    z-index: 5;
+    color: $color-white;
+    // color: red;
+  }
 }
 
 .resultImg {
   z-index: -1;
+}
+
+.imgOverlay {
+  position: absolute;
+  // z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
 }

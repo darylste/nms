@@ -1,6 +1,13 @@
 @import '@styles/variables';
+@import '@styles/mixins';
 
 .pageOverview {
   text-align: center;
   padding: $spacing-2xl $spacing-xl;
+}
+
+@include media-mobile {
+  .pageOverview {
+    @include mobile-padding;
+  }
 }

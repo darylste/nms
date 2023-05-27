@@ -45,7 +45,7 @@ const SingleEventPage: FC<ISingleEventPageProps> = ({ event }) => {
         subheading={event.hostMuseum.name}
         heading={event.name}
         text={event.description}
-        imgUrl={event.imgUrl}
+        imgUrl={`/assets/images/${event.imgUrl}`}
         imgAlt={event.imgAlt}
       />
       <FourBlockInfo blocks={event.features} />
@@ -56,7 +56,7 @@ const SingleEventPage: FC<ISingleEventPageProps> = ({ event }) => {
         premiumAdultPrice={event.premiumAdultPrice}
       />
       <ReviewSection
-        img={event.reviews[0].imgUrl}
+        img={`/assets/images/$ç{event.reviews[0].imgUrl}`}
         imgAlt={event.reviews[0].imgAlt}
         text={event.reviews[0].review}
         author={event.reviews[0].author}

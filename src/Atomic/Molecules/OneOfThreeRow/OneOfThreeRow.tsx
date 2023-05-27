@@ -34,6 +34,7 @@ const OneOfThreeRow: FC<IOneOfThreeRowProps> = ({
     >
       <div className={styles.imgContainer}>
         <Image
+          style={{ objectFit: 'cover' }}
           src={imgUrl}
           alt={imgAlt}
           fill

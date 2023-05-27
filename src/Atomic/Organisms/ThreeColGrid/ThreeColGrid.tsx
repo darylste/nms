@@ -11,6 +11,7 @@ interface IThreeColGridProps {
 }
 
 const ThreeColGrid: FC<IThreeColGridProps> = ({ results }) => {
+  console.log(results);
   return (
     <div className={styles.threeColGrid}>
       {results.map(({ slug, imgUrl, imgAlt, name, hostMuseum }) => (
@@ -19,23 +20,23 @@ const ThreeColGrid: FC<IThreeColGridProps> = ({ results }) => {
           href={`/event/${slug}`}
         >
           <div className={styles.result}>
-            <Image
-              className={styles.resultImg}
-              src={imgUrl}
-              alt={imgAlt}
-              fill
-            />
-            <Spacer
-              top='sm'
-              right='sm'
-              bottom='sm'
-              left='sm'
-            >
-              <Text varient='h5'>{name}</Text>
-              <Spacer top='2xs'>
-                <Text varient='body'>{hostMuseum.name}</Text>
-              </Spacer>
-            </Spacer>
+            <div className={styles.imgOverlay}>
+              <Image
+                className={styles.resultImg}
+                src={`/assets/images/${imgUrl}`}
+                alt={imgAlt}
+                fill
+              />
+              <div className={styles.textContainer}>
+                <Text varient='h5'>{name}</Text>
+                <Spacer
+                  top='2xs'
+                  bottom='xs'
+                >
+                  <Text varient='body'>{hostMuseum.name}</Text>
+                </Spacer>
+              </div>
+            </div>
           </div>
         </Link>
       ))}

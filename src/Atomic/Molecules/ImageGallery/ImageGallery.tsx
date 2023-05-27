@@ -17,7 +17,7 @@ const ImageGallery: FC<IImageGalleryProps> = ({ images }) => {
         >
           <Image
             className={styles.image}
-            src={imgUrl}
+            src={`/assets/images/${imgUrl}`}
             alt={imgAlt}
             fill
           />

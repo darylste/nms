@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { Spacer, Text, PricingCard } from '@atomic';
 
 import styles from './PricingSection.module.scss';
+import { useIsLoggedIn } from 'hooks/auth';
 
 interface IPricingSectionProps {
   standardBenefits: string[];

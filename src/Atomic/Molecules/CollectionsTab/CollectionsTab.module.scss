@@ -1,0 +1,51 @@
+@import '@styles/variables';
+
+.table {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: $color-primary-tint;
+}
+.tableHead {
+  background-color: $color-primary-shade;
+  color: $color-white;
+  font-weight: $font-weight-semi-bold;
+  padding: $spacing-xs;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: repeat(5, 2fr) repeat(2, 1fr);
+  gap: 0;
+
+  &:nth-of-type(even) {
+    background-color: $color-primary;
+  }
+}
+
+.tableCell {
+  margin: $spacing-2xs 0;
+
+  & input {
+    border: none;
+    background-color: unset;
+    width: 100%;
+    margin: 0 $spacing-2xs;
+    font-weight: $font-weight-semi-bold;
+  }
+}
+
+.blur {
+  filter: blur(4px);
+}
+
+.createMuseumForm {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  gap: $spacing-sm;
+  width: 80vw;
+  padding: $spacing-2xl;
+  background-color: $color-white;
+}

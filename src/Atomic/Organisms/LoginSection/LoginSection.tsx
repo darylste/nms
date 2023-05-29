@@ -59,6 +59,7 @@ const LoginSection: FC = () => {
                   setErrorMessage(data.message);
                 } else {
                   cookie.set('token', data.token);
+                  cookie.set('user', JSON.stringify(data.data.user));
                   router.push('/');
                 }
               } catch (err: any) {
@@ -87,7 +88,6 @@ const LoginSection: FC = () => {
                 name='emailAddress'
                 placeholder='Email Address'
                 type='email'
-                width='full'
                 onChange={handleChange as any}
                 onBlur={handleBlur as any}
                 value={values.emailAddress}
@@ -99,7 +99,6 @@ const LoginSection: FC = () => {
                 name='password'
                 placeholder='Password'
                 type='password'
-                width='full'
                 onChange={handleChange as any}
                 onBlur={handleBlur as any}
                 value={values.password}

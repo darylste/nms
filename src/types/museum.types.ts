@@ -4,6 +4,7 @@ export interface IImage {
 }
 
 export interface IMuseum {
+  _id: string;
   name: string;
   slug: string;
   location: string;

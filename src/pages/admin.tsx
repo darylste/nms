@@ -4,13 +4,14 @@ import { AdminPanel, Header, Footer } from '@atomic';
 
 import styles from '../styles/Home.module.scss';
 import { footerData, navItems } from 'utils/data';
-import { ICollection, IEvent, IMuseum, IUser } from 'types';
+import { IBooking, ICollection, IEvent, IMuseum, IUser } from 'types';
 
 interface IAdminPageProps {
   museums: IMuseum[];
   events: IEvent[];
   collections: ICollection[];
   users: IUser[];
+  bookings: IBooking[];
 }
 
 const AdminPage: NextPage<IAdminPageProps> = ({
@@ -18,6 +19,7 @@ const AdminPage: NextPage<IAdminPageProps> = ({
   events,
   collections,
   users,
+  bookings,
 }) => {
   return (
     <div className={styles.container}>
@@ -37,6 +39,8 @@ const AdminPage: NextPage<IAdminPageProps> = ({
         museums={museums}
         events={events}
         collections={collections}
+        users={users}
+        bookings={bookings}
       />
       <Footer {...footerData} />
     </div>
@@ -45,6 +49,7 @@ const AdminPage: NextPage<IAdminPageProps> = ({
 
 export const getServerSideProps = async (context: any) => {
   const token = context.req.cookies.token;
+  const user = JSON.parse(context.req.cookies.user || null);
 
   const fetchMuseums = await fetch('http://localhost:3000/api/v1/museums');
   const fetchEvents = await fetch('http://localhost:3000/api/v1/events');
@@ -54,18 +59,31 @@ export const getServerSideProps = async (context: any) => {
   const fetchUsers = await fetch('http://localhost:3000/api/v1/users', {
     headers: { Authorization: `Bearer ${token}` },
   });
+  const fetchBookings = await fetch('http://localhost:3000/api/v1/bookings', {
+    headers: { Authorization: `Bearer ${token}` },
+  });
 
   const museums = await fetchMuseums.json();
   const events = await fetchEvents.json();
   const collections = await fetchCollections.json();
   const users = await fetchUsers.json();
+  const bookings = await fetchBookings.json();
+
+  const isAdmin = user?.role === 'admin';
+
+  if (!token || !isAdmin) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {
       museums: museums.data.museums,
       events: events.data.events,
       collections: collections.data.collections,
-      users: users,
+      users: users.data.users,
+      bookings: bookings.data.bookings,
     },
   };
 };

@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import Head from 'next/head';
 import {
-  BookingOverlay,
   Footer,
   FourBlockInfo,
   Header,
@@ -9,14 +8,7 @@ import {
   ReviewSection,
   TwoColGrid,
 } from '@atomic';
-import {
-  navItems,
-  footerData,
-  singleEventData,
-  fourBlockData,
-  pricingSectionData,
-  reviewSectionData,
-} from '../../utils/data';
+import { navItems, footerData } from '../../utils/data';
 
 import styles from '../../styles/Home.module.scss';
 import { IEvent } from 'types';
@@ -61,7 +53,6 @@ const SingleEventPage: FC<ISingleEventPageProps> = ({ event }) => {
         text={event.reviews[0].review}
         author={event.reviews[0].author}
       />
-      {/* <BookingOverlay /> */}
       <Footer {...footerData} />
     </div>
   );

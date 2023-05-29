@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { Text, Spacer, Button } from '@atomic';
 
 import styles from './PricingCard.module.scss';
+import { useIsLoggedIn } from 'hooks/auth';
 
 interface IPricingCardProps {
   varient: 'standard' | 'premium';
@@ -10,6 +11,8 @@ interface IPricingCardProps {
 }
 
 const PricingCard: FC<IPricingCardProps> = ({ varient, price, benefits }) => {
+  const { isLoggedIn } = useIsLoggedIn();
+
   return (
     <div>
       <div className={`${styles[varient]} ${styles.pricingCard}`}>

@@ -78,10 +78,12 @@ const CreateAccountSection: FC = () => {
                   },
                 );
                 const data = await res.json();
+
                 if (data.status === 'fail') {
                   setErrorMessage(data.message);
                 } else {
                   cookie.set('token', data.token);
+                  cookie.set('user', JSON.stringify(data.data.user));
                   router.push('/');
                 }
               } catch (err: any) {
@@ -112,7 +114,6 @@ const CreateAccountSection: FC = () => {
                     name='firstName'
                     placeholder='First Name'
                     type='text'
-                    width='full'
                     onChange={handleChange as any}
                     onBlur={handleBlur as any}
                     value={values.firstName}
@@ -126,7 +127,6 @@ const CreateAccountSection: FC = () => {
                     name='lastName'
                     placeholder='Last Name'
                     type='text'
-                    width='full'
                     onChange={handleChange as any}
                     onBlur={handleBlur as any}
                     value={values.lastName}
@@ -141,7 +141,6 @@ const CreateAccountSection: FC = () => {
                   name='emailAddress'
                   placeholder='Email Address'
                   type='email'
-                  width='full'
                   onChange={handleChange as any}
                   onBlur={handleBlur as any}
                   value={values.emailAddress}
@@ -155,7 +154,6 @@ const CreateAccountSection: FC = () => {
                   name='password'
                   placeholder='Password'
                   type='password'
-                  width='full'
                   onChange={handleChange as any}
                   onBlur={handleBlur as any}
                   value={values.password}
@@ -169,7 +167,6 @@ const CreateAccountSection: FC = () => {
                   name='confirmPassword'
                   placeholder='Confirm Password'
                   type='password'
-                  width='full'
                   onChange={handleChange as any}
                   onBlur={handleBlur as any}
                   value={values.confirmPassword}

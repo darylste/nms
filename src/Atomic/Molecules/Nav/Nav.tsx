@@ -4,12 +4,12 @@ import Link from 'next/link';
 import { Button, Text } from '@atomic';
 import { INavItemProps } from '@types';
 import { useIsLoggedIn } from '../../../hooks/auth';
+import cookies from 'js-cookie';
 
 import hamburgerIcon from '/public/assets/icons/hamburger.svg';
 import exitIcon from '/public/assets/icons/exit.svg';
 
 import styles from './Nav.module.scss';
-import { boolean } from 'yup';
 
 interface INavProps {
   items: INavItemProps[];

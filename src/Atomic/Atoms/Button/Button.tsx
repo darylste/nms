@@ -1,4 +1,5 @@
 import React, { FC, ReactNode } from 'react';
+import Link from 'next/link';
 import cn from 'classnames';
 
 import styles from './Button.module.scss';
@@ -9,6 +10,7 @@ interface IButtonProps {
   children: ReactNode;
   fullWidth?: boolean;
   isSubmitting?: boolean;
+  onClick?: () => void;
 }
 
 const Button: FC<IButtonProps> = ({
@@ -17,15 +19,17 @@ const Button: FC<IButtonProps> = ({
   children,
   fullWidth,
   isSubmitting,
+  onClick,
 }) => {
   if (varient === 'cta') {
     return (
-      <a
+      <Link
         className={cn(fullWidth ? styles.fullWidth : null, styles.cta)}
-        href={href}
+        href={href as string}
+        onClick={onClick}
       >
         {children}
-      </a>
+      </Link>
     );
   } else {
     return (
@@ -33,6 +37,7 @@ const Button: FC<IButtonProps> = ({
         type='submit'
         className={cn(fullWidth ? styles.fullWidth : null, styles.cta)}
         disabled={isSubmitting}
+        onClick={onClick}
       >
         {children}
       </button>

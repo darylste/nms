@@ -43,6 +43,12 @@ export const getServerSideProps = async () => {
   const fetchEvents = await fetch('http://localhost:3000/api/v1/events');
   const events = await fetchEvents.json();
 
+  if (!events) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       events: events.data.events,

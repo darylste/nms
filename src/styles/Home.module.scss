@@ -1,0 +1,20 @@
+@import '@styles/variables';
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  & div {
+    text-align: center;
+  }
+}
+.link {
+  color: $color-accent;
+
+  &:hover {
+    color: $color-accent-tint;
+  }
+}

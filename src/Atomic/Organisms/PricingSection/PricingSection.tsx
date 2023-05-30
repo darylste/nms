@@ -9,6 +9,7 @@ interface IPricingSectionProps {
   premiumBenefits: string[];
   standardAdultPrice: number;
   premiumAdultPrice: number;
+  slug: string;
 }
 
 const PricingSection: FC<IPricingSectionProps> = ({
@@ -16,6 +17,7 @@ const PricingSection: FC<IPricingSectionProps> = ({
   premiumBenefits,
   standardAdultPrice,
   premiumAdultPrice,
+  slug,
 }) => {
   return (
     <div className={styles.pricingSection}>
@@ -23,6 +25,7 @@ const PricingSection: FC<IPricingSectionProps> = ({
       <Spacer top='2xl' />
       <div className={styles.cards}>
         <PricingCard
+          slug={slug}
           varient='standard'
           price={standardAdultPrice}
           benefits={standardBenefits}
@@ -31,6 +34,7 @@ const PricingSection: FC<IPricingSectionProps> = ({
           varient='premium'
           price={premiumAdultPrice}
           benefits={premiumBenefits}
+          slug={slug}
         />
       </div>
     </div>

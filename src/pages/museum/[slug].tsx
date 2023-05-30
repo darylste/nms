@@ -52,7 +52,6 @@ const SingleMuseumPage: NextPage<ISingleMuseumPageProps> = ({
         orientation='left'
       />
       <MuseumEvents events={event} />
-      {/* <LocationSection {...locationSectionData} /> */}
       <ImageGallery images={museum.imgGallery} />
       <Footer {...footerData} />
     </div>
@@ -71,6 +70,12 @@ export const getServerSideProps = async (context: any) => {
     `http://localhost:3000/api/v1/events/museum/${slug}`,
   );
   const event = await fetchEvent.json();
+
+  if (!event) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {

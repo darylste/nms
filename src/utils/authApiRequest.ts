@@ -34,12 +34,12 @@ export const authApiRequest = async ({
     const res = await rawRes.json();
 
     if (res.status === 'fail' || res.status === 'error') {
-      throw new Error();
+      throw new Error(res.message);
     }
 
     toast('Success!');
     router.reload();
-  } catch (err) {
-    toast('Whoops! Something went wrong... try again later.');
+  } catch (err: any) {
+    toast(err.message);
   }
 };

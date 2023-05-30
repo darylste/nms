@@ -65,6 +65,12 @@ export const getServerSideProps = async (context: any) => {
   const fetchEvent = await fetch(`http://localhost:3000/api/v1/events/${slug}`);
   const event = await fetchEvent.json();
 
+  if (!event.data) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       event: event.data.event,

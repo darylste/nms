@@ -1,0 +1,12 @@
+@import '@styles/variables';
+.inputContainer {
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+  gap: $spacing-rg;
+  justify-content: center;
+  align-items: center;
+
+  &:not(:last-child) {
+    padding-bottom: $spacing-2xl;
+  }
+}

@@ -30,8 +30,9 @@ const Input: FC<IInputProps> = ({
     case 'number':
       return (
         <div className={styles.numberInputContainer}>
+          <label htmlFor={name}>{placeholder}</label>
           <input
-            className='numberInput'
+            className={styles.input}
             type='number'
             name={name}
             onChange={onChange}
@@ -65,7 +66,7 @@ const Input: FC<IInputProps> = ({
       );
     default:
       return (
-        <div className={'styles.labelContainer'}>
+        <div className={styles.labelContainer}>
           <input
             className={styles.input}
             type={type}

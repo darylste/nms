@@ -118,7 +118,7 @@ const LoginSection: FC = () => {
         </Formik>
         <Spacer top='rg' />
         <Text varient='body'>
-          Don&apos;t have an account? Create one
+          Don&apos;t have an account? Create one{' '}
           <Link
             className={styles.loginLink}
             href='/createAccount'

@@ -1,65 +1,21 @@
 import React, { FC } from 'react';
-
-import styles from './SidebarFooter.module.scss';
+import { Spacer, Text } from '@atomic';
 import Image from 'next/image';
-import { Spacer, Text } from 'Atomic/Atoms';
+
+import logo from '/public/assets/images/logo.svg';
+import styles from './SidebarFooter.module.scss';
 
 const SidebarFooter: FC = () => {
   return (
     <div className={styles.sidebarFooter}>
       <div className={`${styles.imgContainer} ${styles.logoImg}`}>
         <Image
-          src={
-            'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder'
-          }
+          src={logo}
           alt=''
           fill
         />
       </div>
-      <Spacer
-        top='rg'
-        bottom='rg'
-      >
-        <div className={styles.imgGrid}>
-          <div className={`${styles.imgContainer} ${styles.gridImg}`}>
-            <Image
-              src={
-                'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder'
-              }
-              alt=''
-              fill
-            />
-          </div>
-          <div className={`${styles.imgContainer} ${styles.gridImg}`}>
-            <Image
-              src={
-                'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder'
-              }
-              alt=''
-              fill
-            />
-          </div>
-          <div className={`${styles.imgContainer} ${styles.gridImg}`}>
-            <Image
-              src={
-                'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder'
-              }
-              alt=''
-              fill
-            />
-          </div>
-          <div className={`${styles.imgContainer} ${styles.gridImg}`}>
-            <Image
-              src={
-                'https://www.dummyimage.com/260x260/93a49b/000000.jpg&text=Placeholder'
-              }
-              alt=''
-              fill
-            />
-          </div>
-        </div>
-      </Spacer>
-
+      <Spacer top='2xl' />
       <div className={styles.text}>
         <Text varient='body'>
           Our mission is to inspire and engage visitors with Scotland&apos;s

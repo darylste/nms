@@ -79,8 +79,8 @@ const CreateAccountSection: FC = () => {
                 );
                 const data = await res.json();
 
-                if (data.status === 'fail') {
-                  setErrorMessage(data.message);
+                if (data.status === 'fail' || data.status === 'error') {
+                  throw new Error();
                 } else {
                   cookie.set('token', data.token);
                   cookie.set('user', JSON.stringify(data.data.user));

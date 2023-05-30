@@ -46,6 +46,7 @@ const CreateMuseumPage: FC<ISingleEventPageProps> = () => {
               resource: 'museum',
               method: 'POST',
               body: JSON.stringify(values),
+              redirectTo: '/admin?tab=museums',
             });
           }, 400);
         }}

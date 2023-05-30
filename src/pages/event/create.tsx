@@ -61,6 +61,7 @@ const CreateEventPage: FC<ICreateEventPageProps> = ({ museums }) => {
               resource: 'event',
               method: 'POST',
               body: JSON.stringify(values),
+              redirectTo: '/admin?tab=events',
             });
           }, 400);
         }}

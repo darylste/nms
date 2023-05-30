@@ -1,5 +1,11 @@
 @import '@styles/variables';
 
+.numberInputContainer {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: $spacing-rg;
+}
+
 .input {
   all: unset;
   border-bottom: 1px solid $color-black;

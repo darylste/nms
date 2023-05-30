@@ -7,6 +7,7 @@ import deleteIcon from '/public/assets/icons/delete.svg';
 import Image from 'next/image';
 
 import styles from './EventTab.module.scss';
+import { EventSchemaUpdate } from 'types/event.types';
 
 interface IEventTabsProps {
   events: IEvent[];
@@ -26,7 +27,7 @@ const EventTab: FC<IEventTabsProps> = ({ events }) => {
               <Text varient='body'>Name</Text>
             </div>
             <div className={styles.tableTitle}>
-              <Text varient='body'>Location</Text>
+              <Text varient='body'>Host Museum</Text>
             </div>
             <div className={styles.tableTitle}>
               <Text varient='body'>Image</Text>
@@ -48,6 +49,7 @@ const EventTab: FC<IEventTabsProps> = ({ events }) => {
               <Formik
                 key={event.name}
                 initialValues={event}
+                validationSchema={EventSchemaUpdate}
                 onSubmit={values => {
                   setTimeout(async () => {
                     authApiRequest({
@@ -59,7 +61,14 @@ const EventTab: FC<IEventTabsProps> = ({ events }) => {
                   }, 400);
                 }}
               >
-                {({ values, handleChange, handleBlur, handleSubmit }) => (
+                {({
+                  values,
+                  touched,
+                  errors,
+                  handleChange,
+                  handleBlur,
+                  handleSubmit,
+                }) => (
                   <form
                     className={`${styles.form}, ${styles.tableRow}`}
                     onSubmit={handleSubmit}
@@ -72,15 +81,21 @@ const EventTab: FC<IEventTabsProps> = ({ events }) => {
                         onBlur={handleBlur as any}
                         value={values.name}
                       />
+                      {touched.name && errors.name && (
+                        <div className='error-msg'>{errors.name}</div>
+                      )}
                     </div>
                     <div className={styles.tableCell}>
                       <input
-                        name='location'
+                        name='hostMuseum'
                         type='text'
                         onChange={handleChange as any}
                         onBlur={handleBlur as any}
-                        value={values.hostMuseum.location}
+                        value={values.hostMuseum.name}
                       />
+                      {touched.hostMuseum && errors.hostMuseum && (
+                        <div className='error-msg'>{`${errors.hostMuseum}`}</div>
+                      )}
                     </div>
                     <div className={styles.tableCell}>
                       <input
@@ -90,6 +105,9 @@ const EventTab: FC<IEventTabsProps> = ({ events }) => {
                         onBlur={handleBlur as any}
                         value={values.imgUrl}
                       />
+                      {touched.imgUrl && errors.imgUrl && (
+                        <div className='error-msg'>{errors.imgUrl}</div>
+                      )}
                     </div>
                     <div className={styles.tableCell}>
                       <input
@@ -99,6 +117,9 @@ const EventTab: FC<IEventTabsProps> = ({ events }) => {
                         onBlur={handleBlur as any}
                         value={values.imgAlt}
                       />
+                      {touched.imgAlt && errors.imgAlt && (
+                        <div className='error-msg'>{errors.imgAlt}</div>
+                      )}
                     </div>
                     <div className={styles.tableCell}>
                       <button type='submit'>Update</button>

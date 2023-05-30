@@ -7,6 +7,7 @@ import { navItems, footerData } from '../../utils/data';
 import styles from '../../styles/Home.module.scss';
 import { IMuseum } from 'types';
 import { authApiRequest } from 'utils/authApiRequest';
+import { MuseumSchemaCreate } from 'types/museum.types';
 
 interface ISingleEventPageProps {
   museum: IMuseum;
@@ -38,6 +39,7 @@ const CreateMuseumPage: FC<ISingleEventPageProps> = () => {
 
       <Formik
         initialValues={createFormInitialValues}
+        validationSchema={MuseumSchemaCreate}
         onSubmit={values => {
           setTimeout(async () => {
             authApiRequest({
@@ -48,9 +50,17 @@ const CreateMuseumPage: FC<ISingleEventPageProps> = () => {
           }, 400);
         }}
       >
-        {({ values, handleChange, handleBlur, isSubmitting, handleSubmit }) => (
+        {({
+          values,
+          touched,
+          errors,
+          handleChange,
+          handleBlur,
+          isSubmitting,
+          handleSubmit,
+        }) => (
           <form
-            className={styles.createMuseumForm}
+            className='form'
             onSubmit={handleSubmit}
           >
             <Text varient='h3'>Create Museum</Text>
@@ -63,6 +73,9 @@ const CreateMuseumPage: FC<ISingleEventPageProps> = () => {
                 onBlur={handleBlur as any}
                 onChange={handleChange as any}
               />
+              {touched.name && errors.name && (
+                <div className='error-msg'>{errors.name}</div>
+              )}
             </div>
             <div className={styles.imputContainer}>
               <Input
@@ -73,6 +86,9 @@ const CreateMuseumPage: FC<ISingleEventPageProps> = () => {
                 onBlur={handleBlur as any}
                 onChange={handleChange as any}
               />
+              {touched.location && errors.location && (
+                <div className='error-msg'>{errors.location}</div>
+              )}
             </div>
             <div className={styles.imputContainer}>
               <Input
@@ -83,6 +99,9 @@ const CreateMuseumPage: FC<ISingleEventPageProps> = () => {
                 onBlur={handleBlur as any}
                 onChange={handleChange as any}
               />
+              {touched.imgUrl && errors.imgUrl && (
+                <div className='error-msg'>{errors.imgUrl}</div>
+              )}
             </div>
             <div className={styles.imputContainer}>
               <Input
@@ -93,6 +112,9 @@ const CreateMuseumPage: FC<ISingleEventPageProps> = () => {
                 onBlur={handleBlur as any}
                 onChange={handleChange as any}
               />
+              {touched.imgAlt && errors.imgAlt && (
+                <div className='error-msg'>{errors.imgAlt}</div>
+              )}
             </div>
             <div className={styles.imputContainer}>
               <Input
@@ -103,6 +125,9 @@ const CreateMuseumPage: FC<ISingleEventPageProps> = () => {
                 onBlur={handleBlur as any}
                 onChange={handleChange as any}
               />
+              {touched.shortDescription && errors.shortDescription && (
+                <div className='error-msg'>{errors.shortDescription}</div>
+              )}
             </div>
             <div className={styles.imputContainer}>
               <Input
@@ -113,6 +138,9 @@ const CreateMuseumPage: FC<ISingleEventPageProps> = () => {
                 onBlur={handleBlur as any}
                 onChange={handleChange as any}
               />
+              {touched.longDescription && errors.longDescription && (
+                <div className='error-msg'>{errors.longDescription}</div>
+              )}
             </div>
             <div className={styles.imputContainer}>
               <Button

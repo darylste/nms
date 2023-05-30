@@ -7,6 +7,7 @@ import { navItems, footerData } from '../../utils/data';
 import styles from '../../styles/Home.module.scss';
 import { authApiRequest } from 'utils/authApiRequest';
 import { IMuseum } from 'types';
+import { CollectionSchema } from 'types/collection.types';
 
 interface ICreateCollectionPageProps {
   museums: IMuseum[];
@@ -45,6 +46,7 @@ const CreateCollectionPage: FC<ICreateCollectionPageProps> = ({ museums }) => {
 
       <Formik
         initialValues={createFormInitialValues}
+        validationSchema={CollectionSchema}
         onSubmit={values => {
           console.log(values);
           setTimeout(async () => {
@@ -56,9 +58,17 @@ const CreateCollectionPage: FC<ICreateCollectionPageProps> = ({ museums }) => {
           }, 400);
         }}
       >
-        {({ values, handleChange, handleBlur, isSubmitting, handleSubmit }) => (
+        {({
+          values,
+          touched,
+          errors,
+          handleChange,
+          handleBlur,
+          isSubmitting,
+          handleSubmit,
+        }) => (
           <form
-            className={styles.createMuseumForm}
+            className='form'
             onSubmit={handleSubmit}
           >
             <Text varient='h3'>Create Collection</Text>
@@ -71,6 +81,9 @@ const CreateCollectionPage: FC<ICreateCollectionPageProps> = ({ museums }) => {
                 onBlur={handleBlur as any}
                 onChange={handleChange as any}
               />
+              {touched.name && errors.name && (
+                <div className='error-msg'>{errors.name}</div>
+              )}
             </div>
             <div className={styles.imputContainer}>
               <Input
@@ -92,6 +105,9 @@ const CreateCollectionPage: FC<ICreateCollectionPageProps> = ({ museums }) => {
                 onBlur={handleBlur as any}
                 onChange={handleChange as any}
               />
+              {touched.imgUrl && errors.imgUrl && (
+                <div className='error-msg'>{errors.imgUrl}</div>
+              )}
             </div>
             <div className={styles.imputContainer}>
               <Input
@@ -102,6 +118,9 @@ const CreateCollectionPage: FC<ICreateCollectionPageProps> = ({ museums }) => {
                 onBlur={handleBlur as any}
                 onChange={handleChange as any}
               />
+              {touched.imgAlt && errors.imgAlt && (
+                <div className='error-msg'>{errors.imgAlt}</div>
+              )}
             </div>
             <div className={styles.imputContainer}>
               <Input
@@ -112,6 +131,9 @@ const CreateCollectionPage: FC<ICreateCollectionPageProps> = ({ museums }) => {
                 onBlur={handleBlur as any}
                 onChange={handleChange as any}
               />
+              {touched.description && errors.description && (
+                <div className='error-msg'>{errors.description}</div>
+              )}
             </div>
             <div className={styles.imputContainer}>
               <Button
@@ -119,7 +141,7 @@ const CreateCollectionPage: FC<ICreateCollectionPageProps> = ({ museums }) => {
                 isSubmitting={isSubmitting}
                 fullWidth
               >
-                Create Collection
+                {isSubmitting ? 'Loading...' : 'Create Collection'}
               </Button>
             </div>
           </form>

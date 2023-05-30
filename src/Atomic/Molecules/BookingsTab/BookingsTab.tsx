@@ -1,12 +1,13 @@
 import React, { FC } from 'react';
-import { authApiRequest } from 'utils/authApiRequest';
+import Image from 'next/image';
 import { Text, Spacer } from '@atomic';
+import { authApiRequest } from 'utils/authApiRequest';
 import { IBooking } from 'types';
 import { Formik } from 'formik';
-import deleteIcon from '/public/assets/icons/delete.svg';
-import Image from 'next/image';
 
 import styles from './BookingsTab.module.scss';
+import deleteIcon from '/public/assets/icons/delete.svg';
+import { BookingSchema } from 'types/booking.types';
 
 interface IBookingsTabProps {
   bookings: IBooking[];
@@ -51,6 +52,7 @@ const BookingsTab: FC<IBookingsTabProps> = ({ bookings }) => {
               <Formik
                 key={booking._id}
                 initialValues={booking}
+                validationSchema={BookingSchema}
                 onSubmit={values => {
                   setTimeout(async () => {
                     authApiRequest({
@@ -62,7 +64,14 @@ const BookingsTab: FC<IBookingsTabProps> = ({ bookings }) => {
                   }, 400);
                 }}
               >
-                {({ values, handleChange, handleBlur, handleSubmit }) => (
+                {({
+                  values,
+                  errors,
+                  touched,
+                  handleChange,
+                  handleBlur,
+                  handleSubmit,
+                }) => (
                   <form
                     className={`${styles.form}, ${styles.tableRow}`}
                     onSubmit={handleSubmit}
@@ -75,6 +84,9 @@ const BookingsTab: FC<IBookingsTabProps> = ({ bookings }) => {
                         onBlur={handleBlur as any}
                         value={values.event.name}
                       />
+                      {touched.event && errors.event && (
+                        <div className='error-msg'>{`${errors.event}`}</div>
+                      )}
                     </div>
                     <div className={styles.tableCell}>
                       <input
@@ -84,6 +96,12 @@ const BookingsTab: FC<IBookingsTabProps> = ({ bookings }) => {
                         onBlur={handleBlur as any}
                         value={values.numPremiumAdultTickets}
                       />
+                      {touched.numPremiumAdultTickets &&
+                        errors.numPremiumAdultTickets && (
+                          <div className='error-msg'>
+                            {errors.numPremiumAdultTickets}
+                          </div>
+                        )}
                     </div>
                     <div className={styles.tableCell}>
                       <input
@@ -93,6 +111,12 @@ const BookingsTab: FC<IBookingsTabProps> = ({ bookings }) => {
                         onBlur={handleBlur as any}
                         value={values.numPremiumChildTickets}
                       />
+                      {touched.numPremiumChildTickets &&
+                        errors.numPremiumChildTickets && (
+                          <div className='error-msg'>
+                            {errors.numPremiumChildTickets}
+                          </div>
+                        )}
                     </div>
                     <div className={styles.tableCell}>
                       <input
@@ -102,6 +126,12 @@ const BookingsTab: FC<IBookingsTabProps> = ({ bookings }) => {
                         onBlur={handleBlur as any}
                         value={values.numStandardAdultTickets}
                       />
+                      {touched.numStandardAdultTickets &&
+                        errors.numStandardAdultTickets && (
+                          <div className='error-msg'>
+                            {errors.numStandardAdultTickets}
+                          </div>
+                        )}
                     </div>
                     <div className={styles.tableCell}>
                       <input
@@ -111,6 +141,12 @@ const BookingsTab: FC<IBookingsTabProps> = ({ bookings }) => {
                         onBlur={handleBlur as any}
                         value={values.numStandardChildTickets}
                       />
+                      {touched.numStandardChildTickets &&
+                        errors.numStandardChildTickets && (
+                          <div className='error-msg'>
+                            {errors.numStandardChildTickets}
+                          </div>
+                        )}
                     </div>
 
                     <div className={styles.tableCell}>

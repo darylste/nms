@@ -7,6 +7,7 @@ import deleteIcon from '/public/assets/icons/delete.svg';
 import Image from 'next/image';
 
 import styles from './UsersTab.module.scss';
+import { UserSchema } from 'types/user.types';
 
 interface IUsersTabsProps {
   users: IUser[];
@@ -42,6 +43,7 @@ const UsersTab: FC<IUsersTabsProps> = ({ users }) => {
               <Formik
                 key={user.emailAddress}
                 initialValues={user}
+                validationSchema={UserSchema}
                 onSubmit={values => {
                   setTimeout(async () => {
                     authApiRequest({
@@ -53,7 +55,14 @@ const UsersTab: FC<IUsersTabsProps> = ({ users }) => {
                   }, 400);
                 }}
               >
-                {({ values, handleChange, handleBlur, handleSubmit }) => (
+                {({
+                  values,
+                  touched,
+                  errors,
+                  handleChange,
+                  handleBlur,
+                  handleSubmit,
+                }) => (
                   <form
                     className={`${styles.form}, ${styles.tableRow}`}
                     onSubmit={handleSubmit}
@@ -66,6 +75,9 @@ const UsersTab: FC<IUsersTabsProps> = ({ users }) => {
                         onBlur={handleBlur as any}
                         value={values.firstName}
                       />
+                      {touched.firstName && errors.firstName && (
+                        <div className='error-msg'>{errors.firstName}</div>
+                      )}
                     </div>
                     <div className={styles.tableCell}>
                       <input
@@ -75,6 +87,9 @@ const UsersTab: FC<IUsersTabsProps> = ({ users }) => {
                         onBlur={handleBlur as any}
                         value={values.lastName}
                       />
+                      {touched.lastName && errors.lastName && (
+                        <div className='error-msg'>{errors.lastName}</div>
+                      )}
                     </div>
                     <div className={styles.tableCell}>
                       <input
@@ -84,6 +99,9 @@ const UsersTab: FC<IUsersTabsProps> = ({ users }) => {
                         onBlur={handleBlur as any}
                         value={values.emailAddress}
                       />
+                      {touched.emailAddress && errors.emailAddress && (
+                        <div className='error-msg'>{errors.emailAddress}</div>
+                      )}
                     </div>
                     <div className={styles.tableCell}>
                       <input
@@ -93,6 +111,9 @@ const UsersTab: FC<IUsersTabsProps> = ({ users }) => {
                         onBlur={handleBlur as any}
                         value={values.role}
                       />
+                      {touched.role && errors.role && (
+                        <div className='error-msg'>{errors.role}</div>
+                      )}
                     </div>
                     <div className={styles.tableCell}>
                       <button type='submit'>Update</button>

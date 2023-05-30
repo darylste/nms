@@ -21,7 +21,7 @@ export const authApiRequest = async ({
     : `http://localhost:3000/api/v1/${resource}s`;
 
   try {
-    await fetch(url, {
+    const rawRes = await fetch(url, {
       headers: {
         'Authorization': `Bearer ${token}`,
         'Accept': 'application/json',
@@ -30,6 +30,12 @@ export const authApiRequest = async ({
       method: method,
       body: ['PATCH', 'POST'].includes(method) ? body : null,
     });
+
+    const res = await rawRes.json();
+
+    if (res.status === 'fail' || res.status === 'error') {
+      throw new Error();
+    }
 
     toast('Success!');
     router.reload();

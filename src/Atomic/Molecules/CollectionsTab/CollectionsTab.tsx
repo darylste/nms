@@ -7,6 +7,7 @@ import deleteIcon from '/public/assets/icons/delete.svg';
 import Image from 'next/image';
 
 import styles from './CollectionsTab.module.scss';
+import { CollectionSchema } from 'types/collection.types';
 
 interface ICollectionsTabProps {
   collections: ICollection[];
@@ -52,6 +53,7 @@ const CollectionsTab: FC<ICollectionsTabProps> = ({ collections }) => {
               <Formik
                 key={collection.name}
                 initialValues={collection}
+                validationSchema={CollectionSchema}
                 onSubmit={values => {
                   setTimeout(async () => {
                     authApiRequest({
@@ -63,7 +65,14 @@ const CollectionsTab: FC<ICollectionsTabProps> = ({ collections }) => {
                   }, 400);
                 }}
               >
-                {({ values, handleChange, handleBlur, handleSubmit }) => (
+                {({
+                  values,
+                  touched,
+                  errors,
+                  handleChange,
+                  handleBlur,
+                  handleSubmit,
+                }) => (
                   <form
                     className={`${styles.form}, ${styles.tableRow}`}
                     onSubmit={handleSubmit}
@@ -76,15 +85,21 @@ const CollectionsTab: FC<ICollectionsTabProps> = ({ collections }) => {
                         onBlur={handleBlur as any}
                         value={values.name}
                       />
+                      {touched.name && errors.name && (
+                        <div className='error-msg'>{errors.name}</div>
+                      )}
                     </div>
                     <div className={styles.tableCell}>
                       <input
-                        name='location'
+                        name='hostMuseum'
                         type='text'
                         onChange={handleChange as any}
                         onBlur={handleBlur as any}
                         value={values.hostMuseum.name}
                       />
+                      {touched.hostMuseum && errors.hostMuseum && (
+                        <div className='error-msg'>{`${errors.hostMuseum}`}</div>
+                      )}
                     </div>
                     <div className={styles.tableCell}>
                       <input
@@ -94,6 +109,9 @@ const CollectionsTab: FC<ICollectionsTabProps> = ({ collections }) => {
                         onBlur={handleBlur as any}
                         value={values.imgUrl}
                       />
+                      {touched.imgUrl && errors.imgUrl && (
+                        <div className='error-msg'>{errors.imgUrl}</div>
+                      )}
                     </div>
                     <div className={styles.tableCell}>
                       <input
@@ -103,6 +121,9 @@ const CollectionsTab: FC<ICollectionsTabProps> = ({ collections }) => {
                         onBlur={handleBlur as any}
                         value={values.imgAlt}
                       />
+                      {touched.imgAlt && errors.imgAlt && (
+                        <div className='error-msg'>{errors.imgAlt}</div>
+                      )}
                     </div>
                     <div className={styles.tableCell}>
                       <input
@@ -112,6 +133,9 @@ const CollectionsTab: FC<ICollectionsTabProps> = ({ collections }) => {
                         onBlur={handleBlur as any}
                         value={values.description}
                       />
+                      {touched.description && errors.description && (
+                        <div className='error-msg'>{errors.description}</div>
+                      )}
                     </div>
                     <div className={styles.tableCell}>
                       <button type='submit'>Update</button>

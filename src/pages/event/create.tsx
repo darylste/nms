@@ -8,6 +8,7 @@ import { IMuseum } from 'types';
 import * as yup from 'yup';
 
 import styles from '../../styles/Home.module.scss';
+import { EventSchemaCreate } from 'types/event.types';
 
 interface ICreateEventPageProps {
   museums: IMuseum[];
@@ -28,21 +29,6 @@ const CreateEventPage: FC<ICreateEventPageProps> = ({ museums }) => {
     standardBenefits: '',
     premiumBenefits: '',
   };
-
-  const museumSchema = yup.object().shape({
-    // name: yup.string(),
-    // hostMuseum: '',
-    // imgUrl: '',
-    // imgAlt: '',
-    // dateTime: '',
-    // description: '',
-    // standardAdultPrice: '',
-    // standardChildPrice: '',
-    // premiumAdultPrice: '',
-    // premiumChildPrice: '',
-    // standardBenefits: '',
-    // premiumBenefits: '',
-  });
 
   const museumOptions = museums.map(museum => {
     return {
@@ -68,6 +54,7 @@ const CreateEventPage: FC<ICreateEventPageProps> = ({ museums }) => {
 
       <Formik
         initialValues={initialValues}
+        validationSchema={EventSchemaCreate}
         onSubmit={values => {
           setTimeout(async () => {
             authApiRequest({
@@ -78,9 +65,17 @@ const CreateEventPage: FC<ICreateEventPageProps> = ({ museums }) => {
           }, 400);
         }}
       >
-        {({ values, handleChange, handleBlur, isSubmitting, handleSubmit }) => (
+        {({
+          values,
+          touched,
+          errors,
+          handleChange,
+          handleBlur,
+          isSubmitting,
+          handleSubmit,
+        }) => (
           <form
-            className={styles.createMuseumForm}
+            className='form'
             onSubmit={handleSubmit}
           >
             <Text varient='h3'>Create Event</Text>
@@ -93,6 +88,9 @@ const CreateEventPage: FC<ICreateEventPageProps> = ({ museums }) => {
                 onBlur={handleBlur as any}
                 onChange={handleChange as any}
               />
+              {touched.name && errors.name && (
+                <div className='error-msg'>{errors.name}</div>
+              )}
             </div>
             <div className={styles.imputContainer}>
               <Input
@@ -114,6 +112,9 @@ const CreateEventPage: FC<ICreateEventPageProps> = ({ museums }) => {
                 onBlur={handleBlur as any}
                 onChange={handleChange as any}
               />
+              {touched.imgUrl && errors.imgUrl && (
+                <div className='error-msg'>{errors.imgUrl}</div>
+              )}
             </div>
             <div className={styles.imputContainer}>
               <Input
@@ -124,6 +125,9 @@ const CreateEventPage: FC<ICreateEventPageProps> = ({ museums }) => {
                 onBlur={handleBlur as any}
                 onChange={handleChange as any}
               />
+              {touched.imgAlt && errors.imgAlt && (
+                <div className='error-msg'>{errors.imgAlt}</div>
+              )}
             </div>
             <div className={styles.imputContainer}>
               <Input
@@ -134,6 +138,9 @@ const CreateEventPage: FC<ICreateEventPageProps> = ({ museums }) => {
                 onBlur={handleBlur as any}
                 onChange={handleChange as any}
               />
+              {touched.description && errors.description && (
+                <div className='error-msg'>{errors.description}</div>
+              )}
             </div>
             <div className={styles.imputContainer}>
               <Input
@@ -144,6 +151,9 @@ const CreateEventPage: FC<ICreateEventPageProps> = ({ museums }) => {
                 onBlur={handleBlur as any}
                 onChange={handleChange as any}
               />
+              {touched.standardAdultPrice && errors.standardAdultPrice && (
+                <div className='error-msg'>{errors.standardAdultPrice}</div>
+              )}
             </div>
             <div className={styles.imputContainer}>
               <Input
@@ -154,6 +164,9 @@ const CreateEventPage: FC<ICreateEventPageProps> = ({ museums }) => {
                 onBlur={handleBlur as any}
                 onChange={handleChange as any}
               />
+              {touched.standardChildPrice && errors.standardChildPrice && (
+                <div className='error-msg'>{errors.standardChildPrice}</div>
+              )}
             </div>
             <div className={styles.imputContainer}>
               <Input
@@ -164,6 +177,9 @@ const CreateEventPage: FC<ICreateEventPageProps> = ({ museums }) => {
                 onBlur={handleBlur as any}
                 onChange={handleChange as any}
               />
+              {touched.premiumAdultPrice && errors.premiumAdultPrice && (
+                <div className='error-msg'>{errors.premiumAdultPrice}</div>
+              )}
             </div>
             <div className={styles.imputContainer}>
               <Input
@@ -174,16 +190,18 @@ const CreateEventPage: FC<ICreateEventPageProps> = ({ museums }) => {
                 onBlur={handleBlur as any}
                 onChange={handleChange as any}
               />
+              {touched.premiumChildPrice && errors.premiumChildPrice && (
+                <div className='error-msg'>{errors.premiumChildPrice}</div>
+              )}
             </div>
-            {/* dateTime: '',
-             */}
+
             <div className={styles.imputContainer}>
               <Button
                 varient='form'
                 isSubmitting={isSubmitting}
                 fullWidth
               >
-                Create Event
+                {isSubmitting ? 'Loading...' : 'Create Event'}
               </Button>
             </div>
           </form>

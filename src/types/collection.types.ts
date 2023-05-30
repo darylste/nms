@@ -4,10 +4,10 @@ import { IMuseum } from './museum.types';
 
 export const CollectionSchema = yup.object().shape({
   name: yup.string().required('A collection must have a name.'),
-  hostMuseum: yup.object().required('A collection must have a host museum.'),
+  // hostMuseum: yup.object().required('A collection must have a host museum.'),
 
   description: yup
-    .array()
+    .string()
     .required('A collection must have a short description.'),
   imgUrl: yup.string().required('A collection must have an image.'),
   imgAlt: yup

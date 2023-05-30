@@ -47,14 +47,19 @@ const CreateCollectionPage: FC<ICreateCollectionPageProps> = ({ museums }) => {
       <Formik
         initialValues={createFormInitialValues}
         validationSchema={CollectionSchema}
-        onSubmit={values => {
-          console.log(values);
+        onSubmit={(values, { setSubmitting }) => {
           setTimeout(async () => {
-            authApiRequest({
-              resource: 'collection',
-              method: 'POST',
-              body: JSON.stringify(values),
-            });
+            try {
+              authApiRequest({
+                resource: 'collection',
+                method: 'POST',
+                body: JSON.stringify(values),
+              });
+            } catch (err) {
+              console.log(err);
+            } finally {
+              setSubmitting(false);
+            }
           }, 400);
         }}
       >

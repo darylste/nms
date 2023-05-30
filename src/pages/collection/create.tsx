@@ -54,6 +54,7 @@ const CreateCollectionPage: FC<ICreateCollectionPageProps> = ({ museums }) => {
                 resource: 'collection',
                 method: 'POST',
                 body: JSON.stringify(values),
+                redirectTo: '/admin?tab=collections',
               });
             } catch (err) {
               console.log(err);

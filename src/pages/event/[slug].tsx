@@ -42,6 +42,7 @@ const SingleEventPage: FC<ISingleEventPageProps> = ({ event }) => {
       />
       <FourBlockInfo blocks={event.features} />
       <PricingSection
+        slug={event.slug}
         standardBenefits={event.standardBenefits}
         premiumBenefits={event.premiumBenefits}
         standardAdultPrice={event.standardAdultPrice}

@@ -8,6 +8,7 @@ import { IBooking, IEvent, IUser } from 'types';
 import cookies from 'js-cookie';
 
 import styles from './booking.module.scss';
+import { useRouter } from 'next/router';
 
 interface IAdminPageProps {
   event: IEvent;
@@ -123,17 +124,27 @@ const AdminPage: NextPage<IAdminPageProps> = ({ event }) => {
 
 export const getServerSideProps = async (context: any) => {
   const token = context.req.cookies.token;
+  // redirect if not logged in
+  if (!token) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: '/login',
+      },
+    };
+  }
+
   const slug = context.params.slug;
-
   const fetchEvent = await fetch(`http://localhost:3000/api/v1/events/${slug}`);
-
   const event = await fetchEvent.json();
 
-  if (!token || !event.data) {
+  // return 404 if no data
+  if (!event.data) {
     return {
       notFound: true,
     };
   }
+
   return {
     props: {
       event: event.data.event,

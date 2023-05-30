@@ -6,6 +6,7 @@ import { IEvent } from 'types';
 import featuredImg from '/public/assets/images/featured.jpg';
 
 import styles from './FeaturedSection.module.scss';
+import Link from 'next/link';
 
 interface IFeaturedSectionProps {
   events: IEvent[];
@@ -48,7 +49,7 @@ const FeaturedSection: FC<IFeaturedSectionProps> = ({ events = [] }) => {
       </div>
       <div className={styles.right}>
         {events.map(({ _id, name, imgUrl, imgAlt, slug }) => (
-          <a
+          <Link
             key={_id}
             className={styles.imgContainer}
             href={`/event/${slug}`}
@@ -61,7 +62,7 @@ const FeaturedSection: FC<IFeaturedSectionProps> = ({ events = [] }) => {
               style={{ objectFit: 'cover', width: '100%', height: '100%' }}
               fill
             />
-          </a>
+          </Link>
         ))}
       </div>
     </div>

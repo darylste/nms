@@ -8,9 +8,15 @@ interface IPricingCardProps {
   varient: 'standard' | 'premium';
   price: number;
   benefits: string[];
+  slug: string;
 }
 
-const PricingCard: FC<IPricingCardProps> = ({ varient, price, benefits }) => {
+const PricingCard: FC<IPricingCardProps> = ({
+  varient,
+  price,
+  benefits,
+  slug,
+}) => {
   const { isLoggedIn } = useIsLoggedIn();
 
   return (
@@ -34,7 +40,7 @@ const PricingCard: FC<IPricingCardProps> = ({ varient, price, benefits }) => {
         </ul>
         <Button
           varient='cta'
-          href='#'
+          href={`/booking/${slug}`}
           fullWidth
         >
           Book Now

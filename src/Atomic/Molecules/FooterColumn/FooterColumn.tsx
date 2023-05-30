@@ -3,6 +3,7 @@ import { Text, Spacer } from '@atomic';
 import { IFooterColumnProps } from '@types';
 
 import styles from './FooterColumn.module.scss';
+import Link from 'next/link';
 
 const FooterColumn: FC<IFooterColumnProps> = ({ title, items }) => {
   return (
@@ -13,12 +14,12 @@ const FooterColumn: FC<IFooterColumnProps> = ({ title, items }) => {
         {items.map(({ name, url }, i) => (
           <Fragment key={i}>
             <li>
-              <a
+              <Link
                 className={styles.footerLink}
                 href={url}
               >
                 <Text varient='footer'>{name}</Text>
-              </a>
+              </Link>
             </li>
             <Spacer bottom='2xs' />
           </Fragment>

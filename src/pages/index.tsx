@@ -76,6 +76,12 @@ export const getServerSideProps = async () => {
   const events = await fetchEvents.json();
   const museums = await fetchMuseums.json();
 
+  if (!events || !museums) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       events: events.data.events,

@@ -15,9 +15,6 @@ const SearchResults: FC<ISearchResultsProps> = ({ results }) => {
         <Text varient='body'>
           Showing {results.length} of {results.length} Results...
         </Text>
-        <a href='#'>
-          <Text varient='button'>Filter Options</Text>
-        </a>
       </div>
       <Spacer
         top='sm'
@@ -25,11 +22,7 @@ const SearchResults: FC<ISearchResultsProps> = ({ results }) => {
       >
         <ThreeColGrid results={results} />
       </Spacer>
-      <div className={styles.bottomText}>
-        <a href='#'>
-          <Text varient='button'>View More</Text>
-        </a>
-      </div>
+      <div className={styles.bottomText}></div>
     </div>
   );
 };

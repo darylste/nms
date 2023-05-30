@@ -32,7 +32,7 @@ const Nav: FC<INavProps> = ({ items }) => {
               key={i}
               className={styles.li}
             >
-              <a href={href}>{page}</a>
+              <Link href={href}>{page}</Link>
             </li>
           ))}
           {!isLoggedIn && (
@@ -73,9 +73,9 @@ const Nav: FC<INavProps> = ({ items }) => {
               key={i}
               className={styles.mobileLi}
             >
-              <a href={href}>
+              <Link href={href}>
                 <Text varient='h5'>{page}</Text>
-              </a>
+              </Link>
             </li>
           ))}
           {!isLoggedIn && (

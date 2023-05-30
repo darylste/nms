@@ -42,6 +42,12 @@ export const getServerSideProps = async () => {
   const fetchMuseums = await fetch('http://localhost:3000/api/v1/museums');
   const museums = await fetchMuseums.json();
 
+  if (!museums) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       museums: museums.data.museums,

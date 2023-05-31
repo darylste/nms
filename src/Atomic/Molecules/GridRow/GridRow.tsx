@@ -15,7 +15,7 @@ const GridRow: FC<IGridRowProps> = ({ museum, orientation }) => {
         <div className={styles.imgContainer}>
           <Image
             className={styles.img}
-            src={`/public/assets/images/${museum.imgUrl}`}
+            src={`/assets/images/${museum.imgUrl}`}
             alt={museum.imgAlt}
             fill
           />

@@ -56,7 +56,10 @@ const LoginSection: FC = () => {
                 );
                 const data = await res.json();
                 if (data.status === 'fail' || data.status === 'error') {
-                  throw new Error();
+                  if (res.status === 401) {
+                    throw new Error('Incorrect email address or password.');
+                  }
+                  throw new Error('Something went wrong. Try again later.');
                 } else {
                   cookie.set('token', data.token);
                   cookie.set('user', JSON.stringify(data.data.user));

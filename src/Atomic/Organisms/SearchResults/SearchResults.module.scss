@@ -1,4 +1,5 @@
 @import '@styles/variables';
+@import '@styles/mixins';
 
 .searchResults {
   padding: $spacing-2xl $spacing-xl;
@@ -12,4 +13,10 @@
 .bottomText {
   display: flex;
   justify-content: center;
+}
+
+@include media-mobile {
+  .searchResults {
+    @include mobile-padding;
+  }
 }

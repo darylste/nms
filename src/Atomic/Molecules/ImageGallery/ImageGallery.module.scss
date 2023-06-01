@@ -1,3 +1,6 @@
+@import '@styles/variables';
+@import '@styles/mixins';
+
 .imageGallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -11,4 +14,16 @@
 
 .image {
   border: 3px solid black;
+}
+
+@include media-tablet-portrait {
+  .imageGallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include media-mobile {
+  .imageGallery {
+    grid-template-columns: 1fr;
+  }
 }

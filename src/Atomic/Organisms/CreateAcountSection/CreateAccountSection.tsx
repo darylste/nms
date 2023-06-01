@@ -67,7 +67,7 @@ const CreateAccountSection: FC = () => {
             setTimeout(async () => {
               try {
                 const res = await fetch(
-                  'http://127.0.0.1:3000/api/v1/users/signup',
+                  `https://nms-backend.herokuapp.com/api/v1/users/signup`,
                   {
                     method: 'POST',
                     headers: {

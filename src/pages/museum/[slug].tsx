@@ -63,15 +63,15 @@ export default SingleMuseumPage;
 export const getServerSideProps = async (context: any) => {
   const slug = context.params.slug;
   const fetchMuseum = await fetch(
-    `http://localhost:3000/api/v1/museums/${slug}`,
+    `https://nms-backend.herokuapp.com/api/v1/museums/${slug}`,
   );
   const museum = await fetchMuseum.json();
   const fetchEvent = await fetch(
-    `http://localhost:3000/api/v1/events/museum/${slug}`,
+    `https://nms-backend.herokuapp.com/api/v1/museum/${slug}`,
   );
   const event = await fetchEvent.json();
 
-  if (!event) {
+  if (!event.data || !museum.data) {
     return {
       notFound: true,
     };

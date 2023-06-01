@@ -15,7 +15,7 @@ export const handleUpdate = async (
   try {
     const token = cookie.get('token');
     const updatedDoc = await fetch(
-      `http://localhost:3000/api/v1/${resourse}/${slug}`,
+      `https://nms-backend.herokuapp.com/api/v1/${resourse}/${slug}`,
       {
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -26,7 +26,6 @@ export const handleUpdate = async (
         body: JSON.stringify(body),
       },
     );
-    console.log(updatedDoc);
     alert(`User was updated! : ${JSON.stringify(updatedDoc)}`);
   } catch (err) {
     console.log(err);

@@ -63,7 +63,9 @@ export default SingleEventPage;
 
 export const getServerSideProps = async (context: any) => {
   const slug = context.params.slug;
-  const fetchEvent = await fetch(`http://localhost:3000/api/v1/events/${slug}`);
+  const fetchEvent = await fetch(
+    `https://nms-backend.herokuapp.com/api/v1/events/${slug}`,
+  );
   const event = await fetchEvent.json();
 
   if (!event.data) {

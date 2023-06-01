@@ -39,10 +39,12 @@ const MuseumPage: NextPage<IMuseumProps> = ({ museums }) => {
 };
 
 export const getServerSideProps = async () => {
-  const fetchMuseums = await fetch('http://localhost:3000/api/v1/museums');
+  const fetchMuseums = await fetch(
+    `https://nms-backend.herokuapp.com/api/v1/museums`,
+  );
   const museums = await fetchMuseums.json();
 
-  if (!museums) {
+  if (!museums.data) {
     return {
       notFound: true,
     };

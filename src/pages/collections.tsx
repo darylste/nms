@@ -41,11 +41,11 @@ export default CollectionsPage;
 
 export const getServerSideProps = async () => {
   const fetchCollections = await fetch(
-    'http://localhost:3000/api/v1/collections',
+    `https://nms-backend.herokuapp.com/api/v1/collections`,
   );
   const collections = await fetchCollections.json();
 
-  if (!collections) {
+  if (!collections.data) {
     return {
       notFound: true,
     };

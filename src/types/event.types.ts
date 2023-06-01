@@ -18,7 +18,7 @@ export interface IFeature {
 
 export const EventSchemaCreate = yup.object().shape({
   name: yup.string().required('An event must have a name.'),
-  hostMuseum: yup.object().required('An event must have a host musuem'),
+  // hostMuseum: yup.object().required('An event must have a host musuem'),
   imgUrl: yup.string().required('An event must have an image.'),
   imgAlt: yup
     .string()

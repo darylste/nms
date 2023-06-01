@@ -67,7 +67,7 @@ export const getServerSideProps = async (context: any) => {
   );
   const museum = await fetchMuseum.json();
   const fetchEvent = await fetch(
-    `https://nms-backend.herokuapp.com/api/v1/events/museum${slug}`,
+    `https://nms-backend.herokuapp.com/api/v1/events/museum/${slug}`,
   );
   const event = await fetchEvent.json();
 

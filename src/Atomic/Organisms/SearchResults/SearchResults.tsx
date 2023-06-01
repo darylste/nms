@@ -6,9 +6,10 @@ import { ICollection, IEvent } from 'types';
 
 interface ISearchResultsProps {
   results: ICollection[] | IEvent[];
+  isClickable: boolean;
 }
 
-const SearchResults: FC<ISearchResultsProps> = ({ results }) => {
+const SearchResults: FC<ISearchResultsProps> = ({ results, isClickable }) => {
   return (
     <div className={styles.searchResults}>
       <div className={styles.topText}>
@@ -20,7 +21,10 @@ const SearchResults: FC<ISearchResultsProps> = ({ results }) => {
         top='sm'
         bottom='sm'
       >
-        <ThreeColGrid results={results} />
+        <ThreeColGrid
+          results={results}
+          isClickable={isClickable}
+        />
       </Spacer>
       <div className={styles.bottomText}></div>
     </div>

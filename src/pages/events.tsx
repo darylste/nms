@@ -31,7 +31,10 @@ const EventsPage: NextPage<IEventsPageProps> = ({ events }) => {
       </Head>
       <Header navItems={navItems} />
       <PageOverview {...ourEventsOverview} />
-      <SearchResults results={events} />
+      <SearchResults
+        results={events}
+        isClickable={true}
+      />
       <Footer {...footerData} />
     </div>
   );

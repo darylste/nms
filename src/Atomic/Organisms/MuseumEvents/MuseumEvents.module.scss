@@ -1,5 +1,12 @@
 @import '@styles/variables';
+@import '@styles/mixins';
 
 .museumEvents {
   padding: $spacing-2xl $spacing-xl;
+}
+
+@include media-mobile {
+  .museumEvents {
+    @include mobile-padding;
+  }
 }

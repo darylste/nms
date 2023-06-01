@@ -1,4 +1,5 @@
 @import '@styles/variables';
+@import '@styles/mixins';
 
 .twoColGrid {
   display: grid;
@@ -22,4 +23,18 @@
 
 .imgContainer {
   position: relative;
+}
+
+@include media-tablet-landscape {
+  .twoColGrid {
+    grid-template-columns: 1fr;
+  }
+  .right {
+    grid-column: 1;
+    grid-row: 1;
+    grid-auto-flow: dense;
+  }
+  .imgContainer {
+    height: 350px;
+  }
 }

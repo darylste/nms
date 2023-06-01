@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Open+Sans:wght@400;600&display=swap');
 @import './variables.scss';
+@import './mixins.scss';
 
 *,
 *::before,
@@ -52,5 +53,13 @@ img {
 
   & > * {
     width: 60vw;
+  }
+}
+
+@include media-mobile {
+  .form {
+    & > * {
+      width: 95vw;
+    }
   }
 }

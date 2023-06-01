@@ -46,6 +46,7 @@ const AdminPage: NextPage<IAdminPageProps> = ({ event }) => {
               resource: 'booking',
               method: 'POST',
               body: JSON.stringify(values),
+              redirectTo: '/',
             });
           }, 400);
         }}

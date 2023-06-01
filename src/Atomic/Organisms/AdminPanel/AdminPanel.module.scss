@@ -1,4 +1,5 @@
 @import '@styles/variables';
+@import '@styles/mixins';
 
 .adminPanel {
   display: grid;
@@ -8,7 +9,8 @@
 .sidebar {
   background-color: $color-black;
   color: $color-white;
-  height: 80vh;
+  min-height: 80vh;
+  height: fit-content;
 }
 
 .main {
@@ -24,5 +26,17 @@
 
   & p {
     margin-right: $spacing-rg;
+  }
+}
+
+@include media-tablet-portrait {
+  .adminPanel {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    min-height: unset;
+  }
+  .main {
+    @include mobile-padding;
   }
 }

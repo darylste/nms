@@ -39,6 +39,7 @@ export const authApiRequest = async ({
     }
 
     toast('Success!');
+
     if (!redirectTo) {
       return router.reload();
     }
@@ -46,5 +47,6 @@ export const authApiRequest = async ({
     router.push(redirectTo);
   } catch (err: any) {
     toast(err.message);
+    router.reload();
   }
 };

@@ -15,10 +15,10 @@ export const MuseumSchemaCreate = yup.object().shape({
     .max(40, 'Alternitive text cannot exceed 40 characters.')
     .required('A museum must have image alternative text.'),
   shortDescription: yup
-    .array()
+    .string()
     .required('A museum needs to have a short description.'),
   longDescription: yup
-    .array()
+    .string()
     .required('A museum needs to have a long description.'),
 });
 

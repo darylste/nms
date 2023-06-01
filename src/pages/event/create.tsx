@@ -5,7 +5,6 @@ import { Formik } from 'formik';
 import { navItems, footerData } from '../../utils/data';
 import { authApiRequest } from 'utils/authApiRequest';
 import { IMuseum } from 'types';
-import * as yup from 'yup';
 
 import styles from '../../styles/Home.module.scss';
 import { EventSchemaCreate } from 'types/event.types';
@@ -17,7 +16,7 @@ interface ICreateEventPageProps {
 const CreateEventPage: FC<ICreateEventPageProps> = ({ museums }) => {
   const initialValues = {
     name: '',
-    hostMuseum: '',
+    hostMuseum: museums[0]._id,
     imgUrl: '',
     imgAlt: '',
     dateTime: '',
@@ -56,8 +55,9 @@ const CreateEventPage: FC<ICreateEventPageProps> = ({ museums }) => {
         initialValues={initialValues}
         validationSchema={EventSchemaCreate}
         onSubmit={values => {
+          console.log('hello');
           setTimeout(async () => {
-            authApiRequest({
+            await authApiRequest({
               resource: 'event',
               method: 'POST',
               body: JSON.stringify(values),

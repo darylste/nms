@@ -31,7 +31,10 @@ const CollectionsPage: NextPage<ICollectionsPageProps> = ({ collections }) => {
       </Head>
       <Header navItems={navItems} />
       <PageOverview {...ourCollectionsOverview} />
-      <SearchResults results={collections} />
+      <SearchResults
+        results={collections}
+        isClickable={false}
+      />
       <Footer {...footerData} />
     </div>
   );

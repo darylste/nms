@@ -95,6 +95,12 @@ const Nav: FC<INavProps> = ({ items }) => {
               </Text>
             </li>
           )}
+          <Button
+            href='/events'
+            varient='cta'
+          >
+            View Our Events
+          </Button>
         </ul>
         <Image
           onClick={() => toggleNav()}

@@ -18,8 +18,8 @@ export const authApiRequest = async ({
 }: IAuthApiRequest) => {
   const token = cookie.get('token') as string;
   const url = slug
-    ? `http://localhost:3000/api/v1/${resource}s/${slug}`
-    : `http://localhost:3000/api/v1/${resource}s`;
+    ? `https://nms-backend.herokuapp.com/api/v1/${resource}s/${slug}`
+    : `https://nms-backend.herokuapp.com/api/v1/${resource}s`;
 
   try {
     const rawRes = await fetch(url, {

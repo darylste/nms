@@ -51,17 +51,27 @@ export const getServerSideProps = async (context: any) => {
   const token = context.req.cookies.token;
   const user = JSON.parse(context.req.cookies.user || null);
 
-  const fetchMuseums = await fetch('http://localhost:3000/api/v1/museums');
-  const fetchEvents = await fetch('http://localhost:3000/api/v1/events');
-  const fetchCollections = await fetch(
-    'http://localhost:3000/api/v1/collections',
+  const fetchMuseums = await fetch(
+    `https://nms-backend.herokuapp.com/api/v1/museums`,
   );
-  const fetchUsers = await fetch('http://localhost:3000/api/v1/users', {
-    headers: { Authorization: `Bearer ${token}` },
-  });
-  const fetchBookings = await fetch('http://localhost:3000/api/v1/bookings', {
-    headers: { Authorization: `Bearer ${token}` },
-  });
+  const fetchEvents = await fetch(
+    `https://nms-backend.herokuapp.com/api/v1/events`,
+  );
+  const fetchCollections = await fetch(
+    `https://nms-backend.herokuapp.com/api/v1/collections`,
+  );
+  const fetchUsers = await fetch(
+    `https://nms-backend.herokuapp.com/api/v1/users`,
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    },
+  );
+  const fetchBookings = await fetch(
+    `https://nms-backend.herokuapp.com/api/v1/bookings`,
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    },
+  );
 
   const museums = await fetchMuseums.json();
   const events = await fetchEvents.json();
@@ -70,6 +80,18 @@ export const getServerSideProps = async (context: any) => {
   const bookings = await fetchBookings.json();
 
   const isAdmin = user?.role === 'admin';
+
+  if (
+    !museums.data ||
+    !events.data ||
+    !collections.data ||
+    !users.data ||
+    !bookings.data
+  ) {
+    return {
+      notFound: true,
+    };
+  }
 
   if (!token || !isAdmin) {
     return {

@@ -8,7 +8,7 @@ export const createMuseum = async (
   token: string,
 ) => {
   try {
-    await fetch(`http://localhost:3000/api/v1/museums/${slug}`, {
+    await fetch(`https://nms-backend.herokuapp.com/api/v1/museums/${slug}`, {
       headers: {
         'Authorization': `Bearer ${token}`,
         'Accept': 'application/json',

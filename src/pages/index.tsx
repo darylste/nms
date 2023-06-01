@@ -71,12 +71,16 @@ const Home: NextPage<IHomeProps> = ({ events = [], museums }) => {
 };
 
 export const getServerSideProps = async () => {
-  const fetchEvents = await fetch('http://localhost:3000/api/v1/events');
-  const fetchMuseums = await fetch('http://localhost:3000/api/v1/museums');
+  const fetchEvents = await fetch(
+    `https://nms-backend.herokuapp.com/api/v1/events`,
+  );
+  const fetchMuseums = await fetch(
+    `https://nms-backend.herokuapp.com/api/v1/museums`,
+  );
   const events = await fetchEvents.json();
   const museums = await fetchMuseums.json();
 
-  if (!events || !museums) {
+  if (!events.data || !museums.data) {
     return {
       notFound: true,
     };

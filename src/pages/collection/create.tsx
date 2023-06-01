@@ -164,8 +164,16 @@ export const getServerSideProps = async (context: any) => {
   const token = context.req.cookies.token;
   const user = JSON.parse(context.req.cookies.user || null);
   const isAdmin = user?.role === 'admin';
-  const fetchMuseums = await fetch('http://localhost:3000/api/v1/museums');
+  const fetchMuseums = await fetch(
+    `https://nms-backend.herokuapp.com/api/v1/museums`,
+  );
   const museums = await fetchMuseums.json();
+
+  if (!museums.data) {
+    return {
+      notFound: true,
+    };
+  }
 
   if (!token || !isAdmin) {
     return {

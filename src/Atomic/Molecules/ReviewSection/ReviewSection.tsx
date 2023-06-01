@@ -18,7 +18,6 @@ const ReviewSection: FC<IReviewSectionProps> = ({
   text,
   author,
 }) => {
-  console.log(img);
   return (
     <div className={styles.reviewSection}>
       <div className={styles.imgContainer}>

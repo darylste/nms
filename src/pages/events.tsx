@@ -40,10 +40,12 @@ const EventsPage: NextPage<IEventsPageProps> = ({ events }) => {
 export default EventsPage;
 
 export const getServerSideProps = async () => {
-  const fetchEvents = await fetch('http://localhost:3000/api/v1/events');
+  const fetchEvents = await fetch(
+    `https://nms-backend.herokuapp.com/api/v1/events`,
+  );
   const events = await fetchEvents.json();
 
-  if (!events) {
+  if (!events.data) {
     return {
       notFound: true,
     };

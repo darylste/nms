@@ -11,7 +11,6 @@ interface IThreeColGridProps {
 }
 
 const ThreeColGrid: FC<IThreeColGridProps> = ({ results }) => {
-  console.log(results);
   return (
     <div className={styles.threeColGrid}>
       {results.map(({ slug, imgUrl, imgAlt, name, hostMuseum }) => (

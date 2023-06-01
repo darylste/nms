@@ -48,22 +48,24 @@ const FeaturedSection: FC<IFeaturedSectionProps> = ({ events = [] }) => {
         </Spacer>
       </div>
       <div className={styles.right}>
-        {events.map(({ _id, name, imgUrl, imgAlt, slug }) => (
-          <Link
-            key={_id}
-            className={styles.imgContainer}
-            href={`/event/${slug}`}
-          >
-            <Text varient='h6'>{name}</Text>
-            <Image
-              className={styles.eventImg}
-              src={`/assets/images/${imgUrl}`}
-              alt={imgAlt}
-              style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-              fill
-            />
-          </Link>
-        ))}
+        {events.map(({ _id, name, imgUrl, imgAlt, slug }, i) =>
+          i < 4 ? (
+            <Link
+              key={_id}
+              className={styles.imgContainer}
+              href={`/event/${slug}`}
+            >
+              <Text varient='h6'>{name}</Text>
+              <Image
+                className={styles.eventImg}
+                src={`/assets/images/${imgUrl}`}
+                alt={imgAlt}
+                style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                fill
+              />
+            </Link>
+          ) : null,
+        )}
       </div>
     </div>
   );

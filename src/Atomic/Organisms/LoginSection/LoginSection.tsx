@@ -44,7 +44,7 @@ const LoginSection: FC = () => {
             setTimeout(async () => {
               try {
                 const res = await fetch(
-                  'http://127.0.0.1:3000/api/v1/users/login',
+                  `https://nms-backend.herokuapp.com/api/v1/users/login`,
                   {
                     method: 'POST',
                     headers: {
